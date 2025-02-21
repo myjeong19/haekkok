@@ -7420,7 +7420,7 @@
           {
             "type": "text",
             "text": {
-              "content": "const navItems = {\n  '/': { name: '홈' },\n  '/blog': { name: '블로그' },\n  '<https://github.com/yourusername>': { name: '깃허브' },  // 수정\n}\n",
+              "content": "const navItems = {\n  '/': { name: '홈' },\n  '/posts': { name: '블로그' },\n  '<https://github.com/yourusername>': { name: '깃허브' },  // 수정\n}\n",
               "link": null
             },
             "annotations": {
@@ -7431,7 +7431,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "const navItems = {\n  '/': { name: '홈' },\n  '/blog': { name: '블로그' },\n  '<https://github.com/yourusername>': { name: '깃허브' },  // 수정\n}\n",
+            "plain_text": "const navItems = {\n  '/': { name: '홈' },\n  '/posts': { name: '블로그' },\n  '<https://github.com/yourusername>': { name: '깃허브' },  // 수정\n}\n",
             "href": null
           }
         ],
@@ -12848,7 +12848,7 @@
           {
             "type": "text",
             "text": {
-              "content": "// app/blog/[slug]/page.tsx\nimport NotionRenderer from '@/components/notion-renderer'\nimport posts from 'content/posts'\n\nexport default function BlogPost({ params }: { params: { slug: string } }) {\n  const post = posts.find(p => p.slug === params.slug)\n  if (!post) return <div>Post not found</div>\n\n  return <NotionRenderer post={post} />\n}\n",
+              "content": "// app/posts/[slug]/page.tsx\nimport NotionRenderer from '@/components/notion-renderer'\nimport posts from 'content/posts'\n\nexport default function BlogPost({ params }: { params: { slug: string } }) {\n  const post = posts.find(p => p.slug === params.slug)\n  if (!post) return <div>Post not found</div>\n\n  return <NotionRenderer post={post} />\n}\n",
               "link": null
             },
             "annotations": {
@@ -12859,7 +12859,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "// app/blog/[slug]/page.tsx\nimport NotionRenderer from '@/components/notion-renderer'\nimport posts from 'content/posts'\n\nexport default function BlogPost({ params }: { params: { slug: string } }) {\n  const post = posts.find(p => p.slug === params.slug)\n  if (!post) return <div>Post not found</div>\n\n  return <NotionRenderer post={post} />\n}\n",
+            "plain_text": "// app/posts/[slug]/page.tsx\nimport NotionRenderer from '@/components/notion-renderer'\nimport posts from 'content/posts'\n\nexport default function BlogPost({ params }: { params: { slug: string } }) {\n  const post = posts.find(p => p.slug === params.slug)\n  if (!post) return <div>Post not found</div>\n\n  return <NotionRenderer post={post} />\n}\n",
             "href": null
           }
         ],
@@ -14485,7 +14485,7 @@
               {
                 "type": "text",
                 "text": {
-                  "content": "yourblog.com/blog/first-post",
+                  "content": "yourblog.com/posts/first-post",
                   "link": null
                 },
                 "annotations": {
@@ -14496,7 +14496,7 @@
                   "code": true,
                   "color": "default"
                 },
-                "plain_text": "yourblog.com/blog/first-post",
+                "plain_text": "yourblog.com/posts/first-post",
                 "href": null
               },
               {
@@ -19460,7 +19460,7 @@
               {
                 "type": "text",
                 "text": {
-                  "content": "//app/blog/[slug].tsx\nimport { notFound } from 'next/navigation'\nimport posts from 'content/posts'\nimport NotionRenderer from 'components/notion-renderer'\nimport Comment from 'components/comment'\n\n{{기존 내용과 동일}}\n\nexport default async function Blog({ params }) {\n  const { slug } = await params\n  let post = posts.find((post) => post.slug === slug)\n  if (!post) {\n    notFound()\n  }\n\n  return (\n    <section>\n      // {{중략}}\n      <NotionRenderer post={post} />\n      <Comment />\n    </section>\n  )\n}\n",
+                  "content": "//app/posts/[slug].tsx\nimport { notFound } from 'next/navigation'\nimport posts from 'content/posts'\nimport NotionRenderer from 'components/notion-renderer'\nimport Comment from 'components/comment'\n\n{{기존 내용과 동일}}\n\nexport default async function Blog({ params }) {\n  const { slug } = await params\n  let post = posts.find((post) => post.slug === slug)\n  if (!post) {\n    notFound()\n  }\n\n  return (\n    <section>\n      // {{중략}}\n      <NotionRenderer post={post} />\n      <Comment />\n    </section>\n  )\n}\n",
                   "link": null
                 },
                 "annotations": {
@@ -19471,7 +19471,7 @@
                   "code": false,
                   "color": "default"
                 },
-                "plain_text": "//app/blog/[slug].tsx\nimport { notFound } from 'next/navigation'\nimport posts from 'content/posts'\nimport NotionRenderer from 'components/notion-renderer'\nimport Comment from 'components/comment'\n\n{{기존 내용과 동일}}\n\nexport default async function Blog({ params }) {\n  const { slug } = await params\n  let post = posts.find((post) => post.slug === slug)\n  if (!post) {\n    notFound()\n  }\n\n  return (\n    <section>\n      // {{중략}}\n      <NotionRenderer post={post} />\n      <Comment />\n    </section>\n  )\n}\n",
+                "plain_text": "//app/posts/[slug].tsx\nimport { notFound } from 'next/navigation'\nimport posts from 'content/posts'\nimport NotionRenderer from 'components/notion-renderer'\nimport Comment from 'components/comment'\n\n{{기존 내용과 동일}}\n\nexport default async function Blog({ params }) {\n  const { slug } = await params\n  let post = posts.find((post) => post.slug === slug)\n  if (!post) {\n    notFound()\n  }\n\n  return (\n    <section>\n      // {{중략}}\n      <NotionRenderer post={post} />\n      <Comment />\n    </section>\n  )\n}\n",
                 "href": null
               }
             ],
@@ -20325,7 +20325,7 @@
           {
             "type": "text",
             "text": {
-              "content": "import posts from \"content/posts\"\n\nexport const baseUrl = '<https://portfolio-blog-starter.vercel.app>'\n\nexport async function sitemap() {\n  let blogs = posts.map((post) => ({\n    url: `${baseUrl}/blog/${post.slug}`,\n    lastModified: post.date,\n  }))\n\n  let routes = ['', '/blog'].map((route) => ({\n    url: `${baseUrl}${route}`,\n    lastModified: new Date().toISOString().split('T')[0],\n  }))\n\n  return [...routes, ...blogs]\n}\n",
+              "content": "import posts from \"content/posts\"\n\nexport const baseUrl = '<https://portfolio-blog-starter.vercel.app>'\n\nexport async function sitemap() {\n  let blogs = posts.map((post) => ({\n    url: `${baseUrl}/posts/${post.slug}`,\n    lastModified: post.date,\n  }))\n\n  let routes = ['', '/posts'].map((route) => ({\n    url: `${baseUrl}${route}`,\n    lastModified: new Date().toISOString().split('T')[0],\n  }))\n\n  return [...routes, ...blogs]\n}\n",
               "link": null
             },
             "annotations": {
@@ -20336,7 +20336,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "import posts from \"content/posts\"\n\nexport const baseUrl = '<https://portfolio-blog-starter.vercel.app>'\n\nexport async function sitemap() {\n  let blogs = posts.map((post) => ({\n    url: `${baseUrl}/blog/${post.slug}`,\n    lastModified: post.date,\n  }))\n\n  let routes = ['', '/blog'].map((route) => ({\n    url: `${baseUrl}${route}`,\n    lastModified: new Date().toISOString().split('T')[0],\n  }))\n\n  return [...routes, ...blogs]\n}\n",
+            "plain_text": "import posts from \"content/posts\"\n\nexport const baseUrl = '<https://portfolio-blog-starter.vercel.app>'\n\nexport async function sitemap() {\n  let blogs = posts.map((post) => ({\n    url: `${baseUrl}/posts/${post.slug}`,\n    lastModified: post.date,\n  }))\n\n  let routes = ['', '/posts'].map((route) => ({\n    url: `${baseUrl}${route}`,\n    lastModified: new Date().toISOString().split('T')[0],\n  }))\n\n  return [...routes, ...blogs]\n}\n",
             "href": null
           }
         ],
@@ -20507,7 +20507,7 @@
           {
             "type": "text",
             "text": {
-              "content": "import { baseUrl } from 'app/sitemap'\nimport posts from 'content/posts'\n\nexport const runtime = 'edge';\n\nexport async function GET() {\n  const itemsXml = posts\n    .sort((a, b) => {\n      if (new Date(a.date) > new Date(b.date)) {\n        return -1\n      }\n      return 1\n    })\n    .map(\n      (post) =>\n        `<item>\n          <title>${post.title}</title>\n          <link>${baseUrl}/blog/${post.slug}</link>\n          <description>${post.description}</description>\n          <pubDate>${new Date(post.date).toUTCString()}</pubDate>\n        </item>`\n    )\n    .join('\\\\n')\n\n  const rssFeed = `<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n  <rss version=\"2.0\">\n    <channel>\n        <title>My Portfolio</title>\n        <link>${baseUrl}</link>\n        <description>This is my portfolio RSS feed</description>\n        ${itemsXml}\n    </channel>\n  </rss>`\n\n  return new Response(rssFeed, {\n    headers: {\n      'Content-Type': 'text/xml',\n    },\n  })\n}\n",
+              "content": "import { baseUrl } from 'app/sitemap'\nimport posts from 'content/posts'\n\nexport const runtime = 'edge';\n\nexport async function GET() {\n  const itemsXml = posts\n    .sort((a, b) => {\n      if (new Date(a.date) > new Date(b.date)) {\n        return -1\n      }\n      return 1\n    })\n    .map(\n      (post) =>\n        `<item>\n          <title>${post.title}</title>\n          <link>${baseUrl}/posts/${post.slug}</link>\n          <description>${post.description}</description>\n          <pubDate>${new Date(post.date).toUTCString()}</pubDate>\n        </item>`\n    )\n    .join('\\\\n')\n\n  const rssFeed = `<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n  <rss version=\"2.0\">\n    <channel>\n        <title>My Portfolio</title>\n        <link>${baseUrl}</link>\n        <description>This is my portfolio RSS feed</description>\n        ${itemsXml}\n    </channel>\n  </rss>`\n\n  return new Response(rssFeed, {\n    headers: {\n      'Content-Type': 'text/xml',\n    },\n  })\n}\n",
               "link": null
             },
             "annotations": {
@@ -20518,7 +20518,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "import { baseUrl } from 'app/sitemap'\nimport posts from 'content/posts'\n\nexport const runtime = 'edge';\n\nexport async function GET() {\n  const itemsXml = posts\n    .sort((a, b) => {\n      if (new Date(a.date) > new Date(b.date)) {\n        return -1\n      }\n      return 1\n    })\n    .map(\n      (post) =>\n        `<item>\n          <title>${post.title}</title>\n          <link>${baseUrl}/blog/${post.slug}</link>\n          <description>${post.description}</description>\n          <pubDate>${new Date(post.date).toUTCString()}</pubDate>\n        </item>`\n    )\n    .join('\\\\n')\n\n  const rssFeed = `<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n  <rss version=\"2.0\">\n    <channel>\n        <title>My Portfolio</title>\n        <link>${baseUrl}</link>\n        <description>This is my portfolio RSS feed</description>\n        ${itemsXml}\n    </channel>\n  </rss>`\n\n  return new Response(rssFeed, {\n    headers: {\n      'Content-Type': 'text/xml',\n    },\n  })\n}\n",
+            "plain_text": "import { baseUrl } from 'app/sitemap'\nimport posts from 'content/posts'\n\nexport const runtime = 'edge';\n\nexport async function GET() {\n  const itemsXml = posts\n    .sort((a, b) => {\n      if (new Date(a.date) > new Date(b.date)) {\n        return -1\n      }\n      return 1\n    })\n    .map(\n      (post) =>\n        `<item>\n          <title>${post.title}</title>\n          <link>${baseUrl}/posts/${post.slug}</link>\n          <description>${post.description}</description>\n          <pubDate>${new Date(post.date).toUTCString()}</pubDate>\n        </item>`\n    )\n    .join('\\\\n')\n\n  const rssFeed = `<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n  <rss version=\"2.0\">\n    <channel>\n        <title>My Portfolio</title>\n        <link>${baseUrl}</link>\n        <description>This is my portfolio RSS feed</description>\n        ${itemsXml}\n    </channel>\n  </rss>`\n\n  return new Response(rssFeed, {\n    headers: {\n      'Content-Type': 'text/xml',\n    },\n  })\n}\n",
             "href": null
           }
         ],
@@ -20875,7 +20875,7 @@
           {
             "type": "text",
             "text": {
-              "content": "export function generateMetadata({ params }) {\n  let post = posts.find((post) => post.slug === params.slug)\n  if (!post) {\n    return\n  }\n  let {\n    title,\n    date: publishedTime,\n    description,\n    image,\n  } = post\n  let ogImage = image\n    ? image\n    : `${baseUrl}/og?title=${encodeURIComponent(title)}`\n\n  return {\n    title,\n    description,\n    openGraph: {\n      title,\n      description,\n      type: 'article',\n      publishedTime,\n      url: `${baseUrl}/blog/${post.slug}`,\n      images: [\n        {\n          url: ogImage,\n        },\n      ],\n    },\n    twitter: {\n      card: 'summary_large_image',\n      title,\n      description,\n      images: [ogImage],\n    },\n  }\n}\n",
+              "content": "export function generateMetadata({ params }) {\n  let post = posts.find((post) => post.slug === params.slug)\n  if (!post) {\n    return\n  }\n  let {\n    title,\n    date: publishedTime,\n    description,\n    image,\n  } = post\n  let ogImage = image\n    ? image\n    : `${baseUrl}/og?title=${encodeURIComponent(title)}`\n\n  return {\n    title,\n    description,\n    openGraph: {\n      title,\n      description,\n      type: 'article',\n      publishedTime,\n      url: `${baseUrl}/posts/${post.slug}`,\n      images: [\n        {\n          url: ogImage,\n        },\n      ],\n    },\n    twitter: {\n      card: 'summary_large_image',\n      title,\n      description,\n      images: [ogImage],\n    },\n  }\n}\n",
               "link": null
             },
             "annotations": {
@@ -20886,7 +20886,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "export function generateMetadata({ params }) {\n  let post = posts.find((post) => post.slug === params.slug)\n  if (!post) {\n    return\n  }\n  let {\n    title,\n    date: publishedTime,\n    description,\n    image,\n  } = post\n  let ogImage = image\n    ? image\n    : `${baseUrl}/og?title=${encodeURIComponent(title)}`\n\n  return {\n    title,\n    description,\n    openGraph: {\n      title,\n      description,\n      type: 'article',\n      publishedTime,\n      url: `${baseUrl}/blog/${post.slug}`,\n      images: [\n        {\n          url: ogImage,\n        },\n      ],\n    },\n    twitter: {\n      card: 'summary_large_image',\n      title,\n      description,\n      images: [ogImage],\n    },\n  }\n}\n",
+            "plain_text": "export function generateMetadata({ params }) {\n  let post = posts.find((post) => post.slug === params.slug)\n  if (!post) {\n    return\n  }\n  let {\n    title,\n    date: publishedTime,\n    description,\n    image,\n  } = post\n  let ogImage = image\n    ? image\n    : `${baseUrl}/og?title=${encodeURIComponent(title)}`\n\n  return {\n    title,\n    description,\n    openGraph: {\n      title,\n      description,\n      type: 'article',\n      publishedTime,\n      url: `${baseUrl}/posts/${post.slug}`,\n      images: [\n        {\n          url: ogImage,\n        },\n      ],\n    },\n    twitter: {\n      card: 'summary_large_image',\n      title,\n      description,\n      images: [ogImage],\n    },\n  }\n}\n",
             "href": null
           }
         ],

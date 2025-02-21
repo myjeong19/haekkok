@@ -683,7 +683,7 @@
           {
             "type": "text",
             "text": {
-              "content": "GET /blog/{blogId}/post",
+              "content": "GET /posts/{blogId}/post",
               "link": null
             },
             "annotations": {
@@ -694,7 +694,7 @@
               "code": true,
               "color": "default"
             },
-            "plain_text": "GET /blog/{blogId}/post",
+            "plain_text": "GET /posts/{blogId}/post",
             "href": null
           },
           {
@@ -1614,7 +1614,7 @@
               {
                 "type": "text",
                 "text": {
-                  "content": "DELETE /blog/{blog_id}",
+                  "content": "DELETE /posts/{blog_id}",
                   "link": null
                 },
                 "annotations": {
@@ -1625,7 +1625,7 @@
                   "code": true,
                   "color": "default"
                 },
-                "plain_text": "DELETE /blog/{blog_id}",
+                "plain_text": "DELETE /posts/{blog_id}",
                 "href": null
               },
               {
@@ -1648,7 +1648,7 @@
               {
                 "type": "text",
                 "text": {
-                  "content": "PATCH (PUT) /blog/{blog_id}",
+                  "content": "PATCH (PUT) /posts/{blog_id}",
                   "link": null
                 },
                 "annotations": {
@@ -1659,7 +1659,7 @@
                   "code": true,
                   "color": "default"
                 },
-                "plain_text": "PATCH (PUT) /blog/{blog_id}",
+                "plain_text": "PATCH (PUT) /posts/{blog_id}",
                 "href": null
               },
               {

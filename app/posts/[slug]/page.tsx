@@ -1,29 +1,21 @@
-import { notFound } from 'next/navigation'
-import { baseUrl } from 'app/sitemap'
-import posts from 'content/posts'
-import NotionRenderer from 'components/notion-renderer'
-import Comment from 'components/comment'
-
-export const runtime = 'edge';
+import { notFound } from 'next/navigation';
+import { baseUrl } from 'app/sitemap';
+import posts from 'content/posts';
+import NotionRenderer from 'components/notion-renderer';
+// import Comment from 'components/comment'
+import { ScrollProgressBar } from '@/components/scroll-progress-bar';
 
 export async function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }))
+  return posts.map(post => ({ slug: post.slug }));
 }
 
 export function generateMetadata({ params }) {
-  let post = posts.find((post) => post.slug === params.slug)
+  let post = posts.find(post => post.slug === params.slug);
   if (!post) {
-    return
+    return;
   }
-  let {
-    title,
-    date: publishedTime,
-    description,
-    image,
-  } = post
-  let ogImage = image
-    ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+  let { title, date: publishedTime, description, image } = post;
+  let ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -33,7 +25,7 @@ export function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${baseUrl}/post/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -46,18 +38,20 @@ export function generateMetadata({ params }) {
       description,
       images: [ogImage],
     },
-  }
+  };
 }
 
 export default async function Blog({ params }) {
-  const { slug } = await params
-  let post = posts.find((post) => post.slug === slug)
+  const { slug } = await params;
+  let post = posts.find(post => post.slug === slug);
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
     <section>
+      <ScrollProgressBar />
+
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -72,16 +66,16 @@ export default async function Blog({ params }) {
             image: post.image
               ? `${baseUrl}${post.image}`
               : `/og?title=${encodeURIComponent(post.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            url: `${baseUrl}/posts/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: 'My Portfolio',
+              name: 'HEAKKOK JEONG',
             },
           }),
         }}
       />
       <NotionRenderer post={post} />
-      <Comment />
+      {/* <Comment /> */}
     </section>
-  )
+  );
 }
