@@ -1,26 +1,15 @@
-import post1 from '../notion-data/126ce18c-fd83-8023-9ad1-d0e1809b21c3.json';
-import post2 from '../notion-data/127ce18c-fd83-805c-bebd-d6772e18bf02.json';
+import post1 from '../notion-data/1b39c395-c2fb-80e0-acd9-ddca37330616.json';
 
 const posts = [
   {
-    title: 'Maximizing the Benefits of BFF Pattern in API Design',
-    slug: 'api-design-in-bff',
+    title: '나는 왜 SSGOI-X를 개발하는가?',
+    slug: 'why-i-develop-ssgoi-x',
     content: post1,
-    date: '2023-10-22',
+    date: '2025-03-10',
     description:
-      'Exploring the shift from domain-centric to data-centric API endpoints after introducing BFF. This article introduces BFF and DDD concepts, then proposes API endpoint design strategies in the context of the BFF pattern.',
+      '페이지 전환 애니메이션이 사용자 경험에 미치는 영향을 바탕으로, SSGOI-X라는 라이브러리를 개발한 이유와 그 비전을 공유합니다. SSGOI-X는 React와 Next.js 환경에서 페이지 전환을 자연스럽게 이어주어 몰입감을 높이는 데 중점을 두고 있습니다.',
     image: undefined,
-    hashtag: ['BFF', 'API Design'],
-  },
-  {
-    title: 'Naver Search Bar UX: Analysis and Implementation Guide',
-    slug: 'naver-search-bar-ux',
-    content: post2,
-    date: '2023-10-23',
-    description:
-      "Explore the UX analysis of Naver's search bar and strategies for replicating its features. The post examines the UX triggers, selection of search results, and the refreshing of result lists. It also compares coding approaches for implementing search bar functionalities, aiming for a concise and effective execution.",
-    image: undefined,
-    hashtag: ['BFF', 'API Design'],
+    hashtag: ['Page Transition Animation', 'SSGOI-X', 'Web Development'],
   },
 ] as Post[];
 
