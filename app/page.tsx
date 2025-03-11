@@ -6,7 +6,7 @@ export default function Page() {
     <section>
       <div className="flex items-center mb-8">
         <Image
-          src="/profile.jpg"
+          src="/profile.jpeg"
           alt="profile image"
           width={100}
           height={100}
@@ -15,7 +15,7 @@ export default function Page() {
         <h1 className="text-2xl font-semibold tracking-tighter">HEAKKOK JEONG</h1>
       </div>
       <p className="mb-4 leading-8">
-        {`새로운 문제를 해결하는 과정을 즐깁니다. 오픈소스 프로젝트 NotionPresso와 SSGOI에 기여한 경험이 있습니다.`}
+        {`작은 디테일의 차이를 민감하게 파악하고 사용자 경험을 개선하는 프론트엔드 개발자 정민영입니다.`}
       </p>
       <div className="my-8">
         <BlogPosts />

@@ -10,16 +10,16 @@ import { ThemeProvider } from 'next-themes';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Notionpresso Portfolio Starter',
-    template: '%s | Notionpresso Portfolio Starter',
+    default: '정해꼭의 개발 일지',
+    template: '%s | 정해꼭의 개발 일지',
   },
-  description: 'This is my my portfloio',
+  description: '정해꼭의 개발 일지',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: '정해꼭의 개발 일지',
+    description: '정해꼭의 개발 일지',
     url: baseUrl,
-    siteName: 'My Portfolio',
-    locale: 'en_US',
+    siteName: '정해꼭의 개발 일지',
+    locale: 'ko_KR',
     type: 'website',
     images: [
       {

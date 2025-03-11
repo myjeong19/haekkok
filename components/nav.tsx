@@ -10,7 +10,7 @@ const navItems = {
     name: 'Posts',
   },
 
-  'https://github.com/notionpresso': {
+  'https://github.com/myjoeng19': {
     name: 'Github',
   },
 };
