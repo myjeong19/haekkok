@@ -3,8 +3,25 @@
 @tailwind utilities;
 
 ::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
+  background-color: #007aff;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #007aff;
+  color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background-color: #0a84ff;
+    color: #000000;
+  }
+
+  ::-moz-selection {
+    background-color: #0a84ff;
+    color: #000000;
+  }
 }
 
 :root {
@@ -55,7 +72,7 @@ html {
   content: '#';
 }
 
-.prose *:hover>.anchor {
+.prose *:hover > .anchor {
   @apply visible;
 }
 
@@ -83,23 +100,59 @@ html {
 }
 
 .prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
+  @apply my-3 text-sm leading-relaxed text-neutral-800 dark:text-neutral-200;
+}
+
+@media (min-width: 640px) {
+  .prose p {
+    @apply my-4 text-base;
+  }
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-2xl font-bold tracking-tight mt-6 mb-3 leading-tight;
+}
+
+@media (min-width: 640px) {
+  .prose h1 {
+    @apply text-3xl mt-8 mb-4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .prose h1 {
+    @apply text-4xl;
+  }
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-semibold tracking-tight mt-6 mb-2 leading-tight;
+}
+
+@media (min-width: 640px) {
+  .prose h2 {
+    @apply text-2xl mt-8 mb-3;
+  }
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-lg font-semibold tracking-tight mt-5 mb-2 leading-snug;
+}
+
+@media (min-width: 640px) {
+  .prose h3 {
+    @apply text-xl mt-6 mb-3;
+  }
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply text-base font-medium tracking-tight mt-4 mb-2 leading-snug;
+}
+
+@media (min-width: 640px) {
+  .prose h4 {
+    @apply text-lg mt-6;
+  }
 }
 
 .prose strong {
@@ -114,7 +167,7 @@ html {
   @apply list-decimal pl-6;
 }
 
-.prose> :first-child {
+.prose > :first-child {
   /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
   margin-bottom: 1.25em !important;
@@ -148,4 +201,256 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+/* NotionPresso 커스터마이징 - Apple HIG 기준 */
+.notion {
+  --notion-font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+    'Helvetica Neue', Arial, sans-serif;
+  --notion-max-width: 720px;
+  --notion-header-height: 45px;
+  --notion-indent: 24px;
+
+  /* Apple HIG 기준 색상 시스템 */
+  --fg-color: rgb(28, 28, 30);
+  --fg-color-0: rgba(28, 28, 30, 0.06);
+  --fg-color-1: rgba(28, 28, 30, 0.12);
+  --fg-color-2: rgba(28, 28, 30, 0.3);
+  --fg-color-3: rgba(28, 28, 30, 0.6);
+  --fg-color-4: rgb(28, 28, 30);
+  --fg-color-5: rgb(242, 242, 247);
+  --fg-color-6: rgba(28, 28, 30, 0.8);
+  --fg-color-icon: var(--fg-color);
+
+  --bg-color: rgb(255, 255, 255);
+  --bg-color-0: rgba(120, 120, 128, 0.12);
+  --bg-color-1: rgb(248, 248, 248);
+  --bg-color-2: rgba(120, 120, 128, 0.16);
+
+  /* Apple 시스템 블루 */
+  --select-color-0: rgb(0, 122, 255);
+  --select-color-1: rgba(0, 122, 255, 0.2);
+  --select-color-2: rgba(0, 122, 255, 0.1);
+
+  /* Typography 개선 */
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+[data-theme='dark'] .notion {
+  --fg-color: rgba(255, 255, 255, 0.92);
+  --fg-color-0: rgba(255, 255, 255, 0.04);
+  --fg-color-1: rgba(255, 255, 255, 0.08);
+  --fg-color-2: rgba(255, 255, 255, 0.22);
+  --fg-color-3: rgba(255, 255, 255, 0.6);
+  --fg-color-4: rgba(255, 255, 255, 0.92);
+  --fg-color-5: rgb(44, 44, 46);
+  --fg-color-6: rgba(255, 255, 255, 0.8);
+
+  --bg-color: rgb(0, 0, 0);
+  --bg-color-0: rgba(120, 120, 128, 0.24);
+  --bg-color-1: rgb(28, 28, 30);
+  --bg-color-2: rgba(120, 120, 128, 0.32);
+
+  --select-color-0: rgb(10, 132, 255);
+  --select-color-1: rgba(10, 132, 255, 0.25);
+  --select-color-2: rgba(10, 132, 255, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  .notion {
+    --fg-color: rgba(255, 255, 255, 0.92);
+    --fg-color-0: rgba(255, 255, 255, 0.04);
+    --fg-color-1: rgba(255, 255, 255, 0.08);
+    --fg-color-2: rgba(255, 255, 255, 0.22);
+    --fg-color-3: rgba(255, 255, 255, 0.6);
+    --fg-color-4: rgba(255, 255, 255, 0.92);
+    --fg-color-5: rgb(44, 44, 46);
+    --fg-color-6: rgba(255, 255, 255, 0.8);
+
+    --bg-color: rgb(0, 0, 0);
+    --bg-color-0: rgba(120, 120, 128, 0.24);
+    --bg-color-1: rgb(28, 28, 30);
+    --bg-color-2: rgba(120, 120, 128, 0.32);
+
+    /* 다크 모드 시스템 블루 */
+    --select-color-0: rgb(10, 132, 255);
+    --select-color-1: rgba(10, 132, 255, 0.25);
+    --select-color-2: rgba(10, 132, 255, 0.15);
+  }
+}
+
+/* NotionPresso 텍스트 선택 스타일 개선 */
+.notion ::selection {
+  background-color: var(--select-color-1);
+  color: var(--fg-color-4);
+}
+
+.notion ::-moz-selection {
+  background-color: var(--select-color-1);
+  color: var(--fg-color-4);
+}
+
+/* NotionPresso 헤딩 스타일 - Apple HIG 기준 + 반응형 */
+.notion .notion-h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--fg-color-4);
+}
+
+@media (min-width: 640px) {
+  .notion .notion-h1 {
+    font-size: 2.25rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.notion .notion-h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--fg-color-4);
+}
+
+@media (min-width: 640px) {
+  .notion .notion-h2 {
+    font-size: 1.875rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.notion .notion-h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--fg-color-4);
+}
+
+@media (min-width: 640px) {
+  .notion .notion-h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* NotionPresso 본문 텍스트 개선 + 반응형 */
+.notion .notion-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: var(--fg-color);
+  font-weight: 400;
+}
+
+@media (min-width: 640px) {
+  .notion .notion-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+.notion .notion-paragraph {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .notion .notion-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+}
+
+/* NotionPresso 리스트 스타일 개선 */
+.notion .notion-bulleted-list-item,
+.notion .notion-numbered-list-item {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+/* NotionPresso Quote 블록 개선 */
+.notion .notion-quote {
+  border-left: 3px solid var(--select-color-0);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--fg-color-3);
+  background-color: var(--bg-color-1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* NotionPresso Callout 블록 개선 */
+.notion .notion-callout {
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  background-color: var(--bg-color-1);
+  border: 1px solid var(--bg-color-2);
+}
+
+/* 코드 블록 개선 */
+.notion .notion-code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  background-color: var(--bg-color-1);
+  border: 1px solid var(--bg-color-2);
+  border-radius: 6px;
+  padding: 0.125rem 0.25rem;
+  font-size: 0.875rem;
+}
+
+.notion .notion-code-block {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  background-color: var(--bg-color-1);
+  border: 1px solid var(--bg-color-2);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
+.notion .notion-title {
+  width: 100%;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.notion .notion-title {
+  color: oklch(0.623 0.214 259.815);
+}
+
+@media (min-width: 640px) {
+  .notion .notion-title {
+    font-size: 2.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .notion .notion-title {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
 }
