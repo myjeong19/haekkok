@@ -57,11 +57,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning className={cx(GeistSans.variable, GeistMono.variable)}>
       <body
-        className="antialiased max-w-xl mx-4 mt-8 sm:mx-auto text-black bg-white dark:text-white dark:bg-black"
+        className="antialiased max-w-2xl mx-4 mt-6 sm:mt-8 sm:mx-auto text-black bg-white dark:text-white dark:bg-black"
         cz-shortcut-listen="true"
       >
         <ThemeProvider attribute="class" defaultTheme="light">
-          <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+          <main className="flex-auto min-w-0 mt-4 sm:mt-6 flex flex-col px-3 sm:px-2 md:px-0">
             <Navbar />
             {children}
             <Footer />
