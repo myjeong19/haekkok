@@ -36,7 +36,6 @@ export function BlogPostsItem({ post }: { post: BlogPostsItemProps }) {
 
   return (
     <Link
-      key={post.title + post.slug}
       className="flex flex-col space-y-1 mb-4 py-5"
       href={`/posts/${post.slug}`}
       onMouseEnter={() => setIsHover(true)}
@@ -46,22 +45,25 @@ export function BlogPostsItem({ post }: { post: BlogPostsItemProps }) {
         <h3
           className={`
           tracking-tighter font-semibold text-3xl mb-2 transition-all delay-150  
-          ${isHover && 'text-teal-500 dark:text-teal-300'}
+          ${isHover && 'text-blue-500 dark:text-blue-300'}
           `}
         >
           {post.title}
         </h3>
 
         <div className="flex">
-          {post.hashtag.map(hashtag => (
-            <p className=" py-1 mr-2 tabular-nums text-sm font-black text-neutral-300 dark:text-neutral-500  ">
+          {post.hashtag.map((hashtag, index) => (
+            <p
+              key={`${post.slug}-${hashtag}-${index}`}
+              className=" py-1 mr-2 tabular-nums text-sm font-black text-neutral-400 dark:text-neutral-600"
+            >
               #{hashtag}
             </p>
           ))}
         </div>
 
         <p className="mb-2 text-neutral-500 dark:text-neutral-300">{post.description}</p>
-        <p className="text-neutral-300 dark:text-neutral-500 text-sm">{setDateFormat(post.date)}</p>
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm">{setDateFormat(post.date)}</p>
       </div>
     </Link>
   );
