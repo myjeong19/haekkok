@@ -95,7 +95,6 @@ html {
 }
 
 .prose img {
-  /* Don't apply styles to next/image */
   @apply m-0;
 }
 
@@ -168,7 +167,6 @@ html {
 }
 
 .prose > :first-child {
-  /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
   margin-bottom: 1.25em !important;
 }
@@ -179,12 +177,10 @@ pre::-webkit-scrollbar {
 
 pre {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
-/* Remove Safari input shadow on mobile */
+
 input[type='text'],
 input[type='email'] {
   -webkit-appearance: none;
@@ -203,7 +199,7 @@ table {
   text-wrap: balance;
 }
 
-/* NotionPresso 커스터마이징 - Apple HIG 기준 */
+
 .notion {
   --notion-font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
     'Helvetica Neue', Arial, sans-serif;
@@ -211,7 +207,7 @@ table {
   --notion-header-height: 45px;
   --notion-indent: 24px;
 
-  /* Apple HIG 기준 색상 시스템 */
+
   --fg-color: rgb(28, 28, 30);
   --fg-color-0: rgba(28, 28, 30, 0.06);
   --fg-color-1: rgba(28, 28, 30, 0.12);
@@ -222,17 +218,17 @@ table {
   --fg-color-6: rgba(28, 28, 30, 0.8);
   --fg-color-icon: var(--fg-color);
 
-  --bg-color: rgb(255, 255, 255);
-  --bg-color-0: rgba(120, 120, 128, 0.12);
-  --bg-color-1: rgb(248, 248, 248);
-  --bg-color-2: rgba(120, 120, 128, 0.16);
+  --bg-color: rgb(250, 250, 250);
+  --bg-color-0: rgba(120, 120, 128, 0.08);
+  --bg-color-1: rgb(246, 246, 246);
+  --bg-color-2: rgba(120, 120, 128, 0.12);
 
-  /* Apple 시스템 블루 */
+
   --select-color-0: rgb(0, 122, 255);
   --select-color-1: rgba(0, 122, 255, 0.2);
   --select-color-2: rgba(0, 122, 255, 0.1);
 
-  /* Typography 개선 */
+
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -249,10 +245,10 @@ table {
   --fg-color-5: rgb(44, 44, 46);
   --fg-color-6: rgba(255, 255, 255, 0.8);
 
-  --bg-color: rgb(0, 0, 0);
-  --bg-color-0: rgba(120, 120, 128, 0.24);
-  --bg-color-1: rgb(28, 28, 30);
-  --bg-color-2: rgba(120, 120, 128, 0.32);
+  --bg-color: rgb(16, 16, 16);
+  --bg-color-0: rgba(120, 120, 128, 0.2);
+  --bg-color-1: rgb(24, 24, 27);
+  --bg-color-2: rgba(120, 120, 128, 0.28);
 
   --select-color-0: rgb(10, 132, 255);
   --select-color-1: rgba(10, 132, 255, 0.25);
@@ -270,19 +266,19 @@ table {
     --fg-color-5: rgb(44, 44, 46);
     --fg-color-6: rgba(255, 255, 255, 0.8);
 
-    --bg-color: rgb(0, 0, 0);
-    --bg-color-0: rgba(120, 120, 128, 0.24);
-    --bg-color-1: rgb(28, 28, 30);
-    --bg-color-2: rgba(120, 120, 128, 0.32);
+    --bg-color: rgb(16, 16, 16);
+    --bg-color-0: rgba(120, 120, 128, 0.2);
+    --bg-color-1: rgb(24, 24, 27);
+    --bg-color-2: rgba(120, 120, 128, 0.28);
 
-    /* 다크 모드 시스템 블루 */
+
     --select-color-0: rgb(10, 132, 255);
     --select-color-1: rgba(10, 132, 255, 0.25);
     --select-color-2: rgba(10, 132, 255, 0.15);
   }
 }
 
-/* NotionPresso 텍스트 선택 스타일 개선 */
+
 .notion ::selection {
   background-color: var(--select-color-1);
   color: var(--fg-color-4);
@@ -293,7 +289,7 @@ table {
   color: var(--fg-color-4);
 }
 
-/* NotionPresso 헤딩 스타일 - Apple HIG 기준 + 반응형 */
+
 .notion .notion-h1 {
   font-size: 1.75rem;
   font-weight: 700;
@@ -347,7 +343,6 @@ table {
   }
 }
 
-/* NotionPresso 본문 텍스트 개선 + 반응형 */
 .notion .notion-text {
   font-size: 0.875rem;
   line-height: 1.6;
@@ -375,14 +370,13 @@ table {
   }
 }
 
-/* NotionPresso 리스트 스타일 개선 */
 .notion .notion-bulleted-list-item,
 .notion .notion-numbered-list-item {
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
 
-/* NotionPresso Quote 블록 개선 */
+
 .notion .notion-quote {
   border-left: 3px solid var(--select-color-0);
   padding-left: 1rem;
@@ -394,7 +388,7 @@ table {
   border-radius: 8px;
 }
 
-/* NotionPresso Callout 블록 개선 */
+
 .notion .notion-callout {
   padding: 1rem;
   border-radius: 8px;
@@ -403,7 +397,7 @@ table {
   border: 1px solid var(--bg-color-2);
 }
 
-/* 코드 블록 개선 */
+
 .notion .notion-code {
   font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
   background-color: var(--bg-color-1);
@@ -423,6 +417,54 @@ table {
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 1rem 0;
+}
+
+
+[data-theme='dark'] .notion .notion-code-block {
+  background-color: rgb(20, 20, 23);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .notion .notion-code-block {
+    background-color: rgb(20, 20, 23);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+
+.notion .notion-code-content {
+  background-color: var(--bg-color-1);
+}
+
+
+[data-theme='dark'] .notion .notion-code-content {
+  background-color: rgb(20, 20, 23);
+}
+
+@media (prefers-color-scheme: dark) {
+  .notion .notion-code-content {
+    background-color: rgb(20, 20, 23);
+  }
+}
+
+
+.notion .notion-code-language {
+  color: rgba(28, 28, 30, 0.6);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+[data-theme='dark'] .notion .notion-code-language {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  .notion .notion-code-language {
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
 
 .notion .notion-title {
