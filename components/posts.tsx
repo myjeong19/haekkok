@@ -51,11 +51,11 @@ export function BlogPostsItem({ post }: { post: BlogPostsItemProps }) {
           {post.title}
         </h3>
 
-        <div className="flex">
+        <div className="flex flex-wrap gap-x-2">
           {post.hashtag.map((hashtag, index) => (
             <p
               key={`${post.slug}-${hashtag}-${index}`}
-              className=" py-1 mr-2 tabular-nums text-sm font-black text-neutral-400 dark:text-neutral-600"
+              className="tabular-nums text-sm font-black text-neutral-400 dark:text-neutral-600"
             >
               #{hashtag}
             </p>
