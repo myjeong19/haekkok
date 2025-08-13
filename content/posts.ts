@@ -1,15 +1,21 @@
-import post1 from '../notion-data/1b39c395-c2fb-80e0-acd9-ddca37330616.json';
+import post1 from '../notion-data/5번의-복붙-지옥에서-1번의-명령어로-notionpresso-cli-개선기.json';
 
 const posts = [
   {
-    title: '나는 왜 SSGOI-X를 개발하는가?',
-    slug: 'why-i-develop-ssgoi-x',
+    title: '5번의 복붙 지옥에서 1번의 명령어로: NotionPresso CLI 개선기',
+    slug: 'notionpresso-cli-improvement',
     content: post1,
-    date: '2025-03-11',
+    date: '2025-08-14',
     description:
-      '페이지 전환 애니메이션이 사용자 경험에 미치는 영향을 바탕으로, SSGOI-X라는 라이브러리를 개발한 이유와 그 비전을 공유합니다. SSGOI-X는 React와 Next.js 환경에서 페이지 전환을 자연스럽게 이어주어 몰입감을 높이는 데 중점을 두고 있습니다.',
+      '취준생이 오픈소스 기여를 통해 배운 것들. NotionPresso CLI의 5번 반복 명령어를 1번으로 줄이는 과정에서 마주한 기술적 도전과 사용자 중심 사고의 중요성을 공유합니다. 간단해 보이는 기능 뒤에 숨은 복잡성과 실무 개발의 현실을 솔직하게 담았습니다.',
     image: undefined,
-    hashtag: ['Page Transition Animation', 'SSGOI-X', 'Web Development'],
+    hashtag: [
+      'NotionPresso',
+      'CLI Development',
+      'Open Source',
+      'TypeScript',
+      'Developer Experience',
+    ],
   },
 ] as Post[];
 
