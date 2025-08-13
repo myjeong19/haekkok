@@ -9,8 +9,9 @@ export async function generateStaticParams() {
   return posts.map(post => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }) {
-  let post = posts.find(post => post.slug === params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  let post = posts.find(post => post.slug === slug);
   if (!post) {
     return;
   }
