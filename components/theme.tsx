@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'; import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 const ThemeToggle = () => {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme: theme, setTheme } = useTheme();
@@ -22,4 +23,3 @@ const ThemeToggle = () => {
 };
 
 export default ThemeToggle;
-
