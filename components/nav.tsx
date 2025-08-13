@@ -10,7 +10,7 @@ const navItems = {
     name: 'Posts',
   },
 
-  'https://github.com/myjoeng19': {
+  'https://github.com/myjeong19': {
     name: 'Github',
   },
 };
@@ -29,7 +29,7 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
+                  className="transition-all text-neutral-600 hover:text-neutral-900 active:text-black dark:text-neutral-300 dark:hover:text-neutral-100 dark:active:text-white flex align-middle relative py-1 px-2 m-1 font-medium"
                 >
                   {name}
                 </Link>
