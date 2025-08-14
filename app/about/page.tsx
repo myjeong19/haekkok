@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function () {
   return (
     <section className="flex flex-col gap-6">
-      <div className="flex flex-col ">
+      <div className="flex flex-col items-center md:items-start">
         <Image
           src="/favicon.svg"
           width={500}
@@ -13,9 +13,9 @@ export default function () {
         />
 
         <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-semibold tracking-tighter">정민영</h1>
+          <h1 className="text-2xl font-semibold tracking-tighter text-nowrap">정민영</h1>
           <span className="text-gray-400">|</span>
-          <p className="text-gray-600 dark:text-gray-400 text-sm">Frontend Developer</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm text-nowrap">Frontend Developer</p>
           <nav className="flex text-sm">
             <a
               className="text-blue-400 hover:text-blue-300 transition-all delay-100"
@@ -34,9 +34,9 @@ export default function () {
         </div>
       </div>
 
-      <hr className="my-8" />
+      <hr className="my-5 lg:my-10" />
 
-      <p className="mb-4 leading-8 px-10">
+      <p className="mb-4 leading-8 px-5 lg:px-10">
         작은 불편도 그냥 넘기지 않습니다. 스크롤 위치를 잃는 이미지 뷰어나 번거로운 CLI 명령 같은
         문제를 직접 마주하며, 더 편리하고 안정적인 방향을 찾아갑니다. 해결 과정에서 배운 것들은 다음
         글과 프로젝트에 자연스럽게 녹여 공유합니다.
