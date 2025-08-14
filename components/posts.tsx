@@ -8,14 +8,14 @@ export function BlogPosts() {
   return (
     <div>
       <div>
-        <h2 className="font-semibold text-sm tracking-tighter text-gray-500">Recent posts</h2>
+        <h2 className="font-semibold text-sm tracking-tighter text-gray-500 mb-4">Recent posts</h2>
         <BlogPostsItem key={posts[0].title + posts[0].slug} post={posts[0]} />
       </div>
 
       <hr />
       <div className="mt-5">
         {posts.length > 1 && (
-          <h2 className="font-semibold text-sm text-gray-500 mb-4 tracking-tighter">Older posts</h2>
+          <h2 className="font-semibold text-sm text-gray-500 tracking-tighter mb-4">Older posts</h2>
         )}
         {posts
           .filter(post => post.title !== posts[0].title)
@@ -49,7 +49,7 @@ export function BlogPostsItem({ post }: { post: BlogPostsItemProps }) {
                  dark:hover:bg-neutral-800 dark:active:bg-neutral-700"
       href={`/posts/${post.slug}`}
     >
-      <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
+      <div className="w-full flex flex-col space-x-0 md:space-x-2">
         <h3
           className="
           tracking-tighter font-semibold text-2xl mb-2 transition-all delay-100 
