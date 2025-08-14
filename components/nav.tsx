@@ -1,21 +1,20 @@
 'use client';
 import Link from 'next/link';
 import ThemeToggle from './theme';
+import { usePathname } from 'next/navigation';
 
 const navItems = {
   '/': {
-    name: 'Home',
-  },
-  '/posts': {
     name: 'Posts',
   },
-
-  'https://github.com/myjeong19': {
-    name: 'Github',
+  '/about': {
+    name: 'About',
   },
 };
 
 export function Navbar() {
+  const pathname = usePathname();
+
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20">

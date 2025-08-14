@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 
 import Link from 'next/link';
 import posts from '../content/posts';
@@ -8,17 +7,28 @@ import { setDateFormat } from '@/lib';
 export function BlogPosts() {
   return (
     <div>
-      <h2 className="font-semibold text-2xl mb-4 tracking-tighter">Posts</h2>
-      {posts
-        .sort((a, b) => {
-          if (new Date(a.date) > new Date(b.date)) {
-            return -1;
-          }
-          return 1;
-        })
-        .map(post => (
-          <BlogPostsItem key={post.title + post.slug} post={post} />
-        ))}
+      <div>
+        <h2 className="font-semibold text-sm tracking-tighter text-gray-500">Recent posts</h2>
+        <BlogPostsItem key={posts[0].title + posts[0].slug} post={posts[0]} />
+      </div>
+
+      <hr />
+      <div className="mt-5">
+        {posts.length > 1 && (
+          <h2 className="font-semibold text-sm text-gray-500 mb-4 tracking-tighter">Older posts</h2>
+        )}
+        {posts
+          .filter(post => post.title !== posts[0].title)
+          .sort((a, b) => {
+            if (new Date(a.date) > new Date(b.date)) {
+              return -1;
+            }
+            return 1;
+          })
+          .map(post => (
+            <BlogPostsItem key={post.title + post.slug} post={post} />
+          ))}
+      </div>
     </div>
   );
 }
@@ -42,7 +52,7 @@ export function BlogPostsItem({ post }: { post: BlogPostsItemProps }) {
       <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
         <h3
           className="
-          tracking-tighter font-semibold text-3xl mb-2 transition-all delay-100 
+          tracking-tighter font-semibold text-2xl mb-2 transition-all delay-100 
           group-hover:text-blue-500 group-active:text-blue-600 
           dark:group-hover:text-blue-300 dark:group-active:text-blue-200
           "
