@@ -468,7 +468,7 @@ table {
 
 @media (min-width: 640px) {
   .notion .notion-title {
-    font-size: 2.25rem;
+    font-size: 2rem;
     margin-top: 2.5rem;
     margin-bottom: 1.25rem;
   }
@@ -476,7 +476,7 @@ table {
 
 @media (min-width: 1024px) {
   .notion .notion-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
   }

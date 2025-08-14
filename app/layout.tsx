@@ -10,25 +10,17 @@ import { ThemeProvider } from 'next-themes';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: '정해꼭의 개발 일지',
-    template: '%s | 정해꼭의 개발 일지',
+    default: 'HAEKKOK | 정민영 - 프론트엔드',
+    template: '%s | HAEKKOK | 정민영 - 프론트엔드',
   },
-  description: '정해꼭의 개발 일지',
+  description: 'HAEKKOK | 정민영 - 프론트엔드',
   openGraph: {
-    title: '정해꼭의 개발 일지',
-    description: '정해꼭의 개발 일지',
+    title: 'HAEKKOK | 정민영 - 프론트엔드',
+    description: 'HAEKKOK | 정민영 - 프론트엔드',
     url: baseUrl,
-    siteName: '정해꼭의 개발 일지',
+    siteName: 'HAEKKOK | 정민영 - 프론트엔드',
     locale: 'ko_KR',
     type: 'website',
-    images: [
-      {
-        url: '/profile.png',
-        width: 800,
-        height: 600,
-        alt: '프로필 이미지',
-      },
-    ],
   },
   robots: {
     index: true,
@@ -43,11 +35,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/profile.png'],
+    images: ['/favicon.svg'],
   },
   icons: {
-    icon: '/profile.png',
-    apple: '/profile.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/favicon.svg',
   },
 };
 
