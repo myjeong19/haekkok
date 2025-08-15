@@ -6,21 +6,30 @@ import { Navbar } from 'components/nav';
 import Footer from 'components/footer';
 import { baseUrl } from './sitemap';
 import { ThemeProvider } from 'next-themes';
+import { seoConfig, generateJsonLd } from 'lib/seo';
+
+const jsonLd = generateJsonLd(baseUrl);
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'HAEKKOK | 정민영 - 프론트엔드',
-    template: '%s | HAEKKOK | 정민영 - 프론트엔드',
+    default: `${seoConfig.site.name} | 프론트엔드 개발자 블로그`,
+    template: `%s | ${seoConfig.site.name} | 프론트엔드 개발자 블로그`,
   },
-  description: 'HAEKKOK | 정민영 - 프론트엔드',
+  description: seoConfig.site.description,
+  keywords: seoConfig.site.keywords,
+  authors: [{ name: seoConfig.site.author }],
+  creator: seoConfig.site.creator,
+  publisher: seoConfig.site.publisher,
+  category: seoConfig.site.category,
   openGraph: {
-    title: 'HAEKKOK | 정민영 - 프론트엔드',
-    description: 'HAEKKOK | 정민영 - 프론트엔드',
+    title: `${seoConfig.site.name} | 프론트엔드 개발자 블로그`,
+    description: seoConfig.site.description,
     url: baseUrl,
-    siteName: 'HAEKKOK | 정민영 - 프론트엔드',
+    siteName: seoConfig.site.name,
     locale: 'ko_KR',
     type: 'website',
+    images: [seoConfig.images.og],
   },
   robots: {
     index: true,
@@ -35,14 +44,21 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/favicon.svg'],
+    title: `${seoConfig.site.name} | 프론트엔드 개발자 블로그`,
+    description: seoConfig.site.description,
+    images: [seoConfig.images.og.url],
+    creator: seoConfig.social.twitter.creator,
+    site: seoConfig.social.twitter.site,
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: seoConfig.images.favicon.ico, sizes: 'any' },
+      { url: seoConfig.images.favicon.svg, type: 'image/svg+xml' },
     ],
-    apple: '/favicon.svg',
+    apple: seoConfig.images.favicon.svg,
+  },
+  alternates: {
+    canonical: baseUrl,
   },
 };
 
@@ -50,7 +66,13 @@ const cx = (...classes) => classes.filter(Boolean).join(' ');
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={cx(GeistSans.variable, GeistMono.variable)}>
+    <html lang="ko" suppressHydrationWarning className={cx(GeistSans.variable, GeistMono.variable)}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className="antialiased max-w-2xl mx-4 mt-6 sm:mt-8 sm:mx-auto text-neutral-900 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-950"
         cz-shortcut-listen="true"
