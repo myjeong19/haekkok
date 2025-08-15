@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { baseUrl } from 'app/sitemap';
 import posts from 'content/posts';
 import NotionRenderer from 'components/notion-renderer';
-// import Comment from 'components/comment'
+import Comment from 'components/comment';
 import { ScrollProgressBar } from '@/components/scroll-progress-bar';
 
 export async function generateStaticParams() {
@@ -39,6 +39,24 @@ export async function generateMetadata({ params }) {
       description,
       images: [ogImage],
     },
+    other: {
+      'application/ld+json': JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.title,
+        datePublished: post.date,
+        dateModified: post.date,
+        description: post.description,
+        image: post.image
+          ? `${baseUrl}${post.image}`
+          : `/og?title=${encodeURIComponent(post.title)}`,
+        url: `${baseUrl}/posts/${post.slug}`,
+        author: {
+          '@type': 'Person',
+          name: 'HEAKKOK JEONG',
+        },
+      }),
+    },
   };
 }
 
@@ -52,31 +70,8 @@ export default async function Blog({ params }) {
   return (
     <section>
       <ScrollProgressBar />
-
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.title,
-            datePublished: post.date,
-            dateModified: post.date,
-            description: post.description,
-            image: post.image
-              ? `${baseUrl}${post.image}`
-              : `/og?title=${encodeURIComponent(post.title)}`,
-            url: `${baseUrl}/posts/${post.slug}`,
-            author: {
-              '@type': 'Person',
-              name: 'HEAKKOK JEONG',
-            },
-          }),
-        }}
-      />
       <NotionRenderer post={post} />
-      {/* <Comment /> */}
+      <Comment />
     </section>
   );
 }

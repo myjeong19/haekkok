@@ -12,16 +12,14 @@
   color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  ::selection {
-    background-color: #0a84ff;
-    color: #000000;
-  }
+.dark ::selection {
+  background-color: #0a84ff;
+  color: #000000;
+}
 
-  ::-moz-selection {
-    background-color: #0a84ff;
-    color: #000000;
-  }
+.dark ::-moz-selection {
+  background-color: #0a84ff;
+  color: #000000;
 }
 
 :root {
@@ -36,13 +34,11 @@
   --sh-entity: #e25a1c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sh-class: #4c97f8;
-    --sh-identifier: white;
-    --sh-keyword: #f47067;
-    --sh-string: #0fa295;
-  }
+.dark {
+  --sh-class: #4c97f8;
+  --sh-identifier: white;
+  --sh-keyword: #f47067;
+  --sh-string: #0fa295;
 }
 
 html {
@@ -51,7 +47,6 @@ html {
 
 .prose .anchor {
   @apply absolute invisible no-underline;
-
   margin-left: -1em;
   padding-right: 0.5em;
   width: 80%;
@@ -230,7 +225,7 @@ table {
   text-rendering: optimizeLegibility;
 }
 
-[data-theme='dark'] .notion {
+.dark .notion {
   --fg-color: rgba(255, 255, 255, 0.92);
   --fg-color-0: rgba(255, 255, 255, 0.04);
   --fg-color-1: rgba(255, 255, 255, 0.08);
@@ -248,28 +243,6 @@ table {
   --select-color-0: rgb(10, 132, 255);
   --select-color-1: rgba(10, 132, 255, 0.25);
   --select-color-2: rgba(10, 132, 255, 0.15);
-}
-
-@media (prefers-color-scheme: dark) {
-  .notion {
-    --fg-color: rgba(255, 255, 255, 0.92);
-    --fg-color-0: rgba(255, 255, 255, 0.04);
-    --fg-color-1: rgba(255, 255, 255, 0.08);
-    --fg-color-2: rgba(255, 255, 255, 0.22);
-    --fg-color-3: rgba(255, 255, 255, 0.6);
-    --fg-color-4: rgba(255, 255, 255, 0.92);
-    --fg-color-5: rgb(44, 44, 46);
-    --fg-color-6: rgba(255, 255, 255, 0.8);
-
-    --bg-color: rgb(16, 16, 16);
-    --bg-color-0: rgba(120, 120, 128, 0.2);
-    --bg-color-1: rgb(24, 24, 27);
-    --bg-color-2: rgba(120, 120, 128, 0.28);
-
-    --select-color-0: rgb(10, 132, 255);
-    --select-color-1: rgba(10, 132, 255, 0.25);
-    --select-color-2: rgba(10, 132, 255, 0.15);
-  }
 }
 
 .notion ::selection {
@@ -408,33 +381,21 @@ table {
   margin: 1rem 0;
 }
 
-[data-theme='dark'] .notion .notion-code-block {
-  background-color: rgb(20, 20, 23);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  .notion .notion-code-block {
-    background-color: rgb(20, 20, 23);
-    border-color: rgba(255, 255, 255, 0.1);
-  }
+.dark .notion .notion-code-block {
+  background-color: rgb(30, 30, 30);
+  border: 1px solid rgb(60, 60, 60);
 }
 
 .notion .notion-code-content {
   background-color: var(--bg-color-1);
 }
 
-[data-theme='dark'] .notion .notion-code-content {
-  background-color: rgb(20, 20, 23);
+.dark .notion .notion-code-content {
+  color: rgb(220, 220, 220);
 }
 
-@media (prefers-color-scheme: dark) {
-  .notion .notion-code-content {
-    background-color: rgb(20, 20, 23);
-  }
-}
-
-.notion .notion-code-language {
+.notion .notion-code-language,
+.notion .notion-code-copy {
   color: rgba(28, 28, 30, 0.6);
   font-size: 0.75rem;
   font-weight: 500;
@@ -442,14 +403,9 @@ table {
   text-transform: uppercase;
 }
 
-[data-theme='dark'] .notion .notion-code-language {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-@media (prefers-color-scheme: dark) {
-  .notion .notion-code-language {
-    color: rgba(255, 255, 255, 0.7);
-  }
+.dark .notion .notion-code-language,
+.dark .notion .notion-code-copy {
+  color: rgb(150, 150, 150);
 }
 
 .notion .notion-title {
@@ -460,10 +416,17 @@ table {
   margin-bottom: 1rem;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  color: oklch(0.623 0.214 259.815);
 }
 
-.notion .notion-title {
-  color: oklch(0.623 0.214 259.815);
+.dark .notion .notion-title {
+  color: oklch(0.8 0.214 259.815);
+}
+
+.notion .notion-code-copy svg,
+.notion .notion-code-copy svg * {
+  fill: currentColor !important;
+  stroke: currentColor !important;
 }
 
 @media (min-width: 640px) {
@@ -480,4 +443,12 @@ table {
     margin-top: 3rem;
     margin-bottom: 1.5rem;
   }
+}
+
+body {
+  background-color: rgb(250, 250, 250);
+}
+
+.dark body {
+  background-color: rgb(20, 20, 20);
 }
