@@ -18,6 +18,7 @@ module.exports = {
           'Arial',
           'sans-serif',
         ],
+        mono: ['SF Mono', 'Monaco', 'Menlo', 'Consolas', 'Courier New', 'monospace'],
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1rem' }],
