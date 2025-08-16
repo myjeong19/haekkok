@@ -13,17 +13,17 @@ const jsonLd = generateJsonLd(baseUrl);
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${seoConfig.site.name} | 프론트엔드 개발자 블로그`,
-    template: `%s | ${seoConfig.site.name} | 프론트엔드 개발자 블로그`,
+    default: `${seoConfig.site.name} | 프론트엔드 개발자`,
+    template: `%s | ${seoConfig.site.name} | 프론트엔드 개발자`,
   },
   description: seoConfig.site.description,
-  keywords: seoConfig.site.keywords,
+  keywords: `${seoConfig.site.keywords}`,
   authors: [{ name: seoConfig.site.author }],
   creator: seoConfig.site.creator,
   publisher: seoConfig.site.publisher,
   category: seoConfig.site.category,
   openGraph: {
-    title: `${seoConfig.site.name} | 프론트엔드 개발자 블로그`,
+    title: `${seoConfig.site.name} | 프론트엔드 개발자`,
     description: seoConfig.site.description,
     url: baseUrl,
     siteName: seoConfig.site.name,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${seoConfig.site.name} | 프론트엔드 개발자 블로그`,
+    title: `${seoConfig.site.name} | 프론트엔드 개발자`,
     description: seoConfig.site.description,
     images: [seoConfig.images.og.url],
     creator: seoConfig.social.twitter.creator,

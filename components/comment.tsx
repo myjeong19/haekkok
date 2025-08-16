@@ -1,35 +1,32 @@
 'use client';
 
-import { useTheme } from 'next-themes';
-import React, { useEffect, useRef } from 'react';
+import { CommentLoading, CommentError } from './comment-status-info';
+import { useComments } from '@/hooks/comment/use-comments';
+
+declare global {
+  interface Window {
+    utterances?: {
+      setTheme: (theme: string) => void;
+    };
+  }
+}
 
 const Utterances = () => {
-  const utterancesRef = useRef<HTMLDivElement>(null);
-  const { resolvedTheme } = useTheme();
+  const { utterancesRef, isLoading, isError } = useComments();
 
-  useEffect(() => {
-    if (!utterancesRef.current) return;
+  if (isLoading) {
+    return <CommentLoading />;
+  }
 
-    const script = document.createElement('script');
-    script.src = 'https://utteranc.es/client.js';
-    script.async = true;
-    script.crossOrigin = 'anonymous';
+  if (isError) {
+    return <CommentError />;
+  }
 
-    script.setAttribute('repo', 'myjeong19/haekkok');
-    script.setAttribute('issue-term', 'pathname');
-    script.setAttribute('theme', resolvedTheme === 'dark' ? 'github-dark' : 'github-light');
-    script.setAttribute('label', 'comment');
-
-    utterancesRef.current.appendChild(script);
-
-    return () => {
-      if (utterancesRef.current) {
-        utterancesRef.current.innerHTML = '';
-      }
-    };
-  }, [resolvedTheme]);
-
-  return <div ref={utterancesRef} />;
+  return (
+    <div className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm dark:border-neutral-800 dark:bg-neutral-950">
+      <div ref={utterancesRef} />
+    </div>
+  );
 };
 
 export default Utterances;

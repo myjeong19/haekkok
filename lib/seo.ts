@@ -1,7 +1,8 @@
 export const seoConfig = {
   site: {
     name: 'HAEKKOK',
-    description: '안녕하세요. 프론트엔드 개발자 정민영입니다.',
+    description:
+      '안녕하세요. 프론트엔드 개발자 HAEKKOK입니다. 불편을 문제로 남기지 않고, 해결 과정에서 얻은 배움을 프로젝트와 글로 이어갑니다.',
     keywords: [
       '프론트엔드',
       'Frontend Development',
@@ -9,8 +10,11 @@ export const seoConfig = {
       'Next.js',
       'TypeScript',
       '웹개발',
-      '개발자블로그',
+      '개발',
       'HAEKKOK',
+      '정민영',
+      '해꼭',
+      '정해꼭',
     ],
     author: 'HAEKKOK',
     creator: 'HAEKKOK',
@@ -28,7 +32,7 @@ export const seoConfig = {
       url: '/og-image.png',
       width: 1200,
       height: 630,
-      alt: 'HAEKKOK - 프론트엔드 개발자 블로그',
+      alt: 'HAEKKOK - 프론트엔드 개발자',
     },
     favicon: {
       ico: '/favicon.ico',

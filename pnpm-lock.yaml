@@ -23,6 +23,9 @@ dependencies:
   geist:
     specifier: 1.2.2
     version: 1.2.2(next@15.4.2-canary.48)
+  lucide-react:
+    specifier: ^0.539.0
+    version: 0.539.0(react@18.2.0)
   next:
     specifier: canary
     version: 15.4.2-canary.48(react-dom@18.2.0)(react@18.2.0)
@@ -1434,6 +1437,14 @@ packages:
   /lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
     dev: true
+
+  /lucide-react@0.539.0(react@18.2.0):
+    resolution: {integrity: sha512-VVISr+VF2krO91FeuCrm1rSOLACQUYVy7NQkzrOty52Y8TlTPcXcMdQFj9bYzBgXbWCiywlwSZ3Z8u6a+6bMlg==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /markdown-extensions@1.1.1:
     resolution: {integrity: sha512-WWC0ZuMzCyDHYCasEGs4IPvLyTGftYwh6wIEOULOF0HXcqZlhwRzrK0w2VUlxWA98xnvb/jszw4ZSkJ6ADpM6Q==}
