@@ -11,22 +11,25 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  let post = posts.find(post => post.slug === slug);
+  const post = posts.find(post => post.slug === slug);
   if (!post) {
     return;
   }
-  let { title, date: publishedTime, description, image } = post;
-  let ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+  const { title, date: publishedTime, description, image } = post;
+  const ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
     description,
+    alternates: {
+      canonical: `${baseUrl}/posts/${post.slug}`,
+    },
     openGraph: {
       title,
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/post/${post.slug}`,
+      url: `${baseUrl}/posts/${post.slug}`,
       images: [
         {
           url: ogImage,
