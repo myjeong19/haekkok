@@ -26,7 +26,7 @@ export function Navbar() {
         <header className="w-full md:max-w-2xl max-w-4xl fixed left-1/2 transform -translate-x-1/2 top-0 right-0 z-50 h-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
           <div className="mx-auto h-full px-2 py-3 flex justify-between items-center">
             <div className="flex flex-row space-x-0">
-              <h1 className="text-base md:text-lg font-medium text-neutral-900 dark:text-neutral-100 truncate py-1 px-2 m-1">
+              <h1 className="text-base md:text-lg font-medium text-neutral-900 dark:text-neutral-100 truncate py-1 pl-2 m-1 w-[250px] md:w-full">
                 {getCurrentPageTitle()}
               </h1>
             </div>
@@ -44,7 +44,7 @@ export function Navbar() {
                   key={path}
                   href={path}
                   className={classMerge(
-                    'transition-all text-neutral-600 hover:text-neutral-900 active:text-black dark:text-neutral-300 dark:hover:text-neutral-100 dark:active:text-white flex align-middle relative py-1 px-2 m-1 font-medium hover:font-bold',
+                    'transition-all text-neutral-600 hover:text-neutral-900 active:text-black dark:text-neutral-300 dark:hover:text-neutral-100 dark:active:text-white flex align-middle relative py-1 pl-2 m-1 font-medium hover:font-bold',
                     (pathname === path || (pathname.includes('posts') && path === '/')) &&
                       'font-bold text-black dark:text-neutral-100 dark:hover:text-neutral-100'
                   )}
