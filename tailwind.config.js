@@ -20,6 +20,10 @@ module.exports = {
         ],
         mono: ['SF Mono', 'Monaco', 'Menlo', 'Consolas', 'Courier New', 'monospace'],
       },
+      height: {
+        'screen-100': 'calc(var(--vh) * 100)',
+      },
+
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1rem' }],
         sm: ['0.875rem', { lineHeight: '1.25rem' }],

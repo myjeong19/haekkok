@@ -2,10 +2,11 @@
 import Link from 'next/link';
 import ThemeToggle from './theme';
 import { usePathname } from 'next/navigation';
+import { classMerge } from '@/lib/class-merge';
 
 const navItems = {
   '/': {
-    name: 'Posts',
+    name: 'Feed',
   },
   '/about': {
     name: 'About',
@@ -28,7 +29,11 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all text-neutral-600 hover:text-neutral-900 active:text-black dark:text-neutral-300 dark:hover:text-neutral-100 dark:active:text-white flex align-middle relative py-1 px-2 m-1 font-medium"
+                  className={classMerge(
+                    'transition-all text-neutral-600 hover:text-neutral-900 active:text-black dark:text-neutral-300 dark:hover:text-neutral-100 dark:active:text-white flex align-middle relative py-1 px-2 m-1 font-medium hover:font-bold',
+                    pathname === path &&
+                      'font-bold text-black dark:text-neutral-100 dark:hover:text-neutral-100'
+                  )}
                 >
                   {name}
                 </Link>

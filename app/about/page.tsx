@@ -70,13 +70,13 @@ export default function AboutPage() {
             className="w-72 h-72 mb-3 rounded-full overflow-hidden"
           />
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap">
             <h1 className="text-2xl font-semibold tracking-tighter text-nowrap">HAEKKOK</h1>
             <span className="text-gray-400">|</span>
             <p className="text-gray-600 dark:text-gray-400 text-sm text-nowrap">
               Frontend Developer
             </p>
-            <nav className="flex text-sm">
+            <nav className="flex text-sm ">
               <a
                 className="text-blue-400 hover:text-blue-300 transition-all delay-100"
                 href="https://www.linkedin.com/in/minyeong-jeong-a93a01271/"
