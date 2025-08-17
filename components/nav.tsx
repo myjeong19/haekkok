@@ -23,20 +23,22 @@ export function Navbar() {
   return (
     <>
       {showHeader && (
-        <header className="w-full md:max-w-2xl max-w-4xl  fixed left-1/2 transform -translate-x-1/2  top-0  right-0 z-50 h-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm border-b  border-neutral-200 dark:border-neutral-800 ">
-          <div className="mx-auto  py-3 flex justify-between items-center">
-            <h1 className="text-lg font-medium text-neutral-900 dark:text-neutral-100 truncate ">
-              {getCurrentPageTitle()}
-            </h1>
+        <header className="w-full md:max-w-2xl max-w-4xl fixed left-1/2 transform -translate-x-1/2 top-0 right-0 z-50 h-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
+          <div className="mx-auto h-full px-2 py-3 flex justify-between items-center">
+            <div className="flex flex-row space-x-0">
+              <h1 className="text-base md:text-lg font-medium text-neutral-900 dark:text-neutral-100 truncate py-1 px-2 m-1">
+                {getCurrentPageTitle()}
+              </h1>
+            </div>
             <ThemeToggle />
           </div>
         </header>
       )}
 
       {showFixedNav && (
-        <nav className="w-full md:max-w-2xl max-w-4xl  fixed left-1/2 transform -translate-x-1/2  top-0 right-0 z-50 h-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800  ">
-          <div className="mx-auto  py-3 flex justify-between items-center">
-            <div className="flex flex-row space-x-0 mt-3">
+        <nav className="w-full md:max-w-2xl max-w-4xl fixed left-1/2 transform -translate-x-1/2 top-0 right-0 z-50 h-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
+          <div className="mx-auto h-full px-2 py-3 flex justify-between items-center">
+            <div className="flex flex-row space-x-0">
               {Object.entries(navItems).map(([path, { name }]) => (
                 <Link
                   key={path}
@@ -61,7 +63,7 @@ export function Navbar() {
       <aside className="mb-16 tracking-tight ">
         <div className="lg:sticky lg:top-20">
           <nav
-            className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+            className="flex flex-row items-start relative px-0 pb-0 fade scroll-pr-6 md:relative justify-between"
             id="nav"
           >
             <div className="flex flex-row space-x-0">
