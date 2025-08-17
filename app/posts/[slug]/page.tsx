@@ -3,7 +3,6 @@ import { baseUrl } from 'app/sitemap';
 import posts from 'content/posts';
 import NotionRenderer from 'components/notion-renderer';
 import Comment from 'components/comment';
-import { ScrollProgressBar } from '@/components/scroll-progress-bar';
 
 export async function generateStaticParams() {
   return posts.map(post => ({ slug: post.slug }));
@@ -72,7 +71,6 @@ export default async function Blog({ params }) {
 
   return (
     <section>
-      <ScrollProgressBar />
       <NotionRenderer post={post} />
       <Comment />
     </section>

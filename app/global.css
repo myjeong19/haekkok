@@ -529,3 +529,76 @@ h3[id] {
 .utterances-frame img {
   display: none !important;
 }
+
+@layer components {
+  .theme-toggle {
+    @apply border-none outline-none cursor-pointer;
+
+    width: 2rem;
+    height: 2rem;
+
+    background: transparent;
+
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.05);
+  }
+
+  .sun-circle {
+    @apply relative w-full h-full rounded-full;
+
+    background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+    transition: background 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    transition: background 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.3s ease;
+  }
+
+  .theme-toggle:hover .sun-circle {
+    box-shadow: 0 4px 20px rgba(255, 140, 0, 0.3);
+  }
+
+  .dark-mode .sun-circle {
+    background: linear-gradient(40deg, #8983f7, #a3dafb 70%);
+  }
+
+  .dark-mode.theme-toggle:hover .sun-circle {
+    box-shadow: 0 4px 20px rgba(137, 131, 247, 0.3);
+  }
+
+  .ray {
+    @apply absolute;
+    width: 2px;
+    height: 6px;
+    background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+    border-radius: 1px;
+    transform-origin: center bottom;
+  }
+
+  .crescent {
+    @apply absolute rounded-full;
+
+    right: 0.5px;
+    top: 0.5px;
+    width: 70%;
+    height: 70%;
+
+    transform: scale(0);
+    transform-origin: top right;
+
+    transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1),
+      background 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .dark-mode .crescent {
+    transform: scale(1);
+    background: #000000;
+  }
+
+  @screen md {
+    .theme-toggle {
+      @apply relative right-0 bottom-0;
+    }
+  }
+}
