@@ -22,12 +22,11 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className={classMerge(
-        'p-2 rounded-md lg:hover:bg-gray-100 lg:dark:hover:bg-gray-800',
-        className
-      )}
+      className={`theme-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode'} ${className}`}
     >
-      {theme === 'dark' ? '🌙' : '☀️'}
+      <div className="sun-circle">
+        <div className="crescent"></div>
+      </div>
     </button>
   );
 };
