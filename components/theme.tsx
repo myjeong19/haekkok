@@ -22,9 +22,11 @@ const ThemeToggle = ({ className }: ThemeToggleProps) => {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className={`theme-toggle ${theme === 'dark' ? 'dark-mode' : 'light-mode '} ${className}`}
+      className={`theme-toggle ${
+        theme === 'dark' ? 'dark-mode' : 'light-mode '
+      } ${className}   mr-3`}
     >
-      <div className="sun-circle min-w-[32px] min-h-[32px] pr-2 pl-2">
+      <div className="sun-circle min-w-[32px] min-h-[32px]">
         <div className="crescent"></div>
       </div>
     </button>
