@@ -2,7 +2,7 @@ import { useEffect, RefObject, useState } from 'react';
 
 import { useTheme } from 'next-themes';
 
-export function useComments(utterancesRef: RefObject<HTMLDivElement>) {
+export function useComments(utterancesRef: RefObject<HTMLDivElement | null>) {
   const { resolvedTheme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);

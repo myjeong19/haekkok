@@ -376,11 +376,12 @@ table {
 }
 
 .notion .notion-code-content {
-  background-color: var(--bg-color-1);
+  background-color: #f8f9fa;
 }
 
 .dark .notion .notion-code-content {
   color: rgb(220, 220, 220);
+  background-color: #1c1c1e;
 }
 
 .notion .notion-code-language,

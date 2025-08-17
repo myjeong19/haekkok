@@ -74,14 +74,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body
-        className="antialiased max-w-2xl mx-4 mt-6 sm:mt-8 sm:mx-auto text-neutral-900 bg-neutral-50 dark:text-neutral-100 dark:bg-neutral-950"
+        className="antialiased max-w-2xl mx-4 mt-6 sm:mt-8 sm:mx-auto text-neutral-900 bg-white dark:text-neutral-100 dark:bg-neutral-950 flex flex-col"
         cz-shortcut-listen="true"
       >
         <ThemeProvider attribute="class" defaultTheme="light">
-          <main className="flex-auto min-w-0 mt-4 sm:mt-6 flex flex-col px-3 sm:px-2 md:px-0">
+          <main className="flex-1 flex flex-col px-3 sm:px-2 md:px-0">
             <Navbar />
             {children}
-            <Footer />
           </main>
         </ThemeProvider>
       </body>
