@@ -1,8 +1,14 @@
 import { MessageSquareWarningIcon, Loader2 } from 'lucide-react';
 
-export function CommentLoading() {
+interface CommentStatusProps {
+  className?: string;
+}
+
+export function CommentLoading({ className = '' }: CommentStatusProps) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-neutral-200/60 bg-white/80 p-8 backdrop-blur-sm dark:border-neutral-700/60 dark:bg-neutral-900/80">
+    <div
+      className={`relative overflow-hidden rounded-2xl border border-neutral-200/60 bg-white/80 p-8 backdrop-blur-sm dark:border-neutral-700/60 dark:bg-neutral-900/80 transition-all duration-500 ease-out transform ${className}`}
+    >
       <div className="flex flex-col items-center justify-center space-y-6">
         <div className="relative">
           <Loader2 className="h-8 w-8 animate-spin text-blue-500 dark:text-blue-400" />
@@ -28,9 +34,13 @@ export function CommentLoading() {
   );
 }
 
-export function CommentError() {
+export function CommentError({ className }: CommentStatusProps) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-red-200/60 bg-white/80 p-8 backdrop-blur-sm dark:border-red-800/60 dark:bg-neutral-900/80">
+    <div
+      className={`relative overflow-hidden rounded-2xl border border-red-200/60 bg-white/80 p-8 backdrop-blur-sm dark:border-red-800/60 dark:bg-neutral-900/80 transition-all duration-500 ease-out transform ${
+        className || ''
+      }`}
+    >
       <div className="flex flex-col items-center justify-center space-y-6">
         <div className="relative">
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30">
