@@ -2,7 +2,7 @@
   "object": "page",
   "id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26",
   "created_time": "2025-04-10T21:29:00.000Z",
-  "last_edited_time": "2025-08-13T23:38:00.000Z",
+  "last_edited_time": "2025-08-17T06:21:00.000Z",
   "created_by": {
     "object": "user",
     "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -20,11 +20,6 @@
   "archived": false,
   "in_trash": false,
   "properties": {
-    "Description": {
-      "id": "%3DACQ",
-      "type": "rich_text",
-      "rich_text": []
-    },
     "Date": {
       "id": "H%5Bpa",
       "type": "created_time",
@@ -53,7 +48,7 @@
         {
           "type": "text",
           "text": {
-            "content": "\"5번의 복붙 지옥에서 1번의 명령어로: NotionPresso CLI 개선기\"",
+            "content": "5번의 복붙 지옥에서 1번의 명령어로: NotionPresso CLI 개선기",
             "link": null
           },
           "annotations": {
@@ -64,7 +59,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "\"5번의 복붙 지옥에서 1번의 명령어로: NotionPresso CLI 개선기\"",
+          "plain_text": "5번의 복붙 지옥에서 1번의 명령어로: NotionPresso CLI 개선기",
           "href": null
         }
       ]
@@ -72,7 +67,7 @@
   },
   "url": "https://www.notion.so/5-1-NotionPresso-CLI-1d19c395c2fb80ba8b20c136de8e0f26",
   "public_url": null,
-  "request_id": "b9d75a54-d391-4da0-b1f5-53952366a485",
+  "request_id": "16726c65-d0dd-4f3f-88c0-8c2dcab6c501",
   "blocks": [
     {
       "object": "block",
@@ -82,7 +77,7 @@
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
       "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "last_edited_time": "2025-08-15T20:14:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -100,7 +95,7 @@
           {
             "type": "text",
             "text": {
-              "content": "처음 NotionPresso를 써봤을 때의 당황",
+              "content": "처음 NotionPresso를 써봤을 때의 당황\n",
               "link": null
             },
             "annotations": {
@@ -111,7 +106,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "처음 NotionPresso를 써봤을 때의 당황",
+            "plain_text": "처음 NotionPresso를 써봤을 때의 당황\n",
             "href": null
           }
         ],
@@ -122,59 +117,13 @@
     },
     {
       "object": "block",
-      "id": "24e9c395-c2fb-804c-9e32-eef1d99eb539",
+      "id": "2509c395-c2fb-8088-adf1-d1ed1868840a",
       "parent": {
         "type": "page_id",
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
-      "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "52c52d67-2221-4853-bae4-9687a30c395a"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "52c52d67-2221-4853-bae4-9687a30c395a"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "code",
-      "code": {
-        "caption": [],
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "npresso --page https://notion.so/myblog/post-1... --auth secret_key...\n...\nnpresso --page https://notion.so/myblog/post-5... --auth secret_key...",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "npresso --page https://notion.so/myblog/post-1... --auth secret_key...\n...\nnpresso --page https://notion.so/myblog/post-5... --auth secret_key...",
-            "href": null
-          }
-        ],
-        "language": "bash"
-      },
-      "blocks": []
-    },
-    {
-      "object": "block",
-      "id": "24e9c395-c2fb-8026-8283-c4d3dcb64d6b",
-      "parent": {
-        "type": "page_id",
-        "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
-      },
-      "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "created_time": "2025-08-15T20:14:00.000Z",
+      "last_edited_time": "2025-08-15T20:14:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -213,13 +162,13 @@
     },
     {
       "object": "block",
-      "id": "24e9c395-c2fb-80a2-a6de-f049fd112ad6",
+      "id": "2509c395-c2fb-807e-8ede-c61e5cf47c48",
       "parent": {
         "type": "page_id",
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
-      "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "created_time": "2025-08-15T20:14:00.000Z",
+      "last_edited_time": "2025-08-15T20:14:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -287,6 +236,52 @@
           }
         ],
         "color": "default"
+      },
+      "blocks": []
+    },
+    {
+      "object": "block",
+      "id": "24e9c395-c2fb-804c-9e32-eef1d99eb539",
+      "parent": {
+        "type": "page_id",
+        "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
+      },
+      "created_time": "2025-08-13T22:53:00.000Z",
+      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "52c52d67-2221-4853-bae4-9687a30c395a"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "52c52d67-2221-4853-bae4-9687a30c395a"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "code",
+      "code": {
+        "caption": [],
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "npresso --page https://notion.so/myblog/post-1... --auth secret_key...\n...\nnpresso --page https://notion.so/myblog/post-5... --auth secret_key...",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "npresso --page https://notion.so/myblog/post-1... --auth secret_key...\n...\nnpresso --page https://notion.so/myblog/post-5... --auth secret_key...",
+            "href": null
+          }
+        ],
+        "language": "bash"
       },
       "blocks": []
     },
@@ -1070,7 +1065,7 @@
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
       "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "last_edited_time": "2025-08-15T20:13:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -1082,28 +1077,27 @@
       "has_children": false,
       "archived": false,
       "in_trash": false,
-      "type": "heading_3",
-      "heading_3": {
+      "type": "paragraph",
+      "paragraph": {
         "rich_text": [
           {
             "type": "text",
             "text": {
-              "content": "문제: 모든 페이지를 매번 처음부터 처리하는 비효율",
+              "content": "모든 페이지를 매번 처음부터 처리하는 비효율",
               "link": null
             },
             "annotations": {
-              "bold": false,
+              "bold": true,
               "italic": false,
               "strikethrough": false,
               "underline": false,
               "code": false,
               "color": "default"
             },
-            "plain_text": "문제: 모든 페이지를 매번 처음부터 처리하는 비효율",
+            "plain_text": "모든 페이지를 매번 처음부터 처리하는 비효율",
             "href": null
           }
         ],
-        "is_toggleable": false,
         "color": "default"
       },
       "blocks": []
@@ -1178,7 +1172,7 @@
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
       "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "last_edited_time": "2025-08-15T20:13:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -1190,8 +1184,8 @@
       "has_children": false,
       "archived": false,
       "in_trash": false,
-      "type": "heading_3",
-      "heading_3": {
+      "type": "paragraph",
+      "paragraph": {
         "rich_text": [
           {
             "type": "text",
@@ -1200,7 +1194,7 @@
               "link": null
             },
             "annotations": {
-              "bold": false,
+              "bold": true,
               "italic": false,
               "strikethrough": false,
               "underline": false,
@@ -1211,7 +1205,6 @@
             "href": null
           }
         ],
-        "is_toggleable": false,
         "color": "default"
       },
       "blocks": []
@@ -1303,7 +1296,7 @@
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
       "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "last_edited_time": "2025-08-15T20:13:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -1315,8 +1308,8 @@
       "has_children": false,
       "archived": false,
       "in_trash": false,
-      "type": "heading_3",
-      "heading_3": {
+      "type": "paragraph",
+      "paragraph": {
         "rich_text": [
           {
             "type": "text",
@@ -1325,7 +1318,7 @@
               "link": null
             },
             "annotations": {
-              "bold": false,
+              "bold": true,
               "italic": false,
               "strikethrough": false,
               "underline": false,
@@ -1336,7 +1329,6 @@
             "href": null
           }
         ],
-        "is_toggleable": false,
         "color": "default"
       },
       "blocks": []
@@ -1394,7 +1386,7 @@
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
       "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "last_edited_time": "2025-08-15T20:13:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -1406,8 +1398,8 @@
       "has_children": false,
       "archived": false,
       "in_trash": false,
-      "type": "heading_3",
-      "heading_3": {
+      "type": "paragraph",
+      "paragraph": {
         "rich_text": [
           {
             "type": "text",
@@ -1416,7 +1408,7 @@
               "link": null
             },
             "annotations": {
-              "bold": false,
+              "bold": true,
               "italic": false,
               "strikethrough": false,
               "underline": false,
@@ -1427,7 +1419,6 @@
             "href": null
           }
         ],
-        "is_toggleable": false,
         "color": "default"
       },
       "blocks": []
@@ -2358,7 +2349,7 @@
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
       "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "last_edited_time": "2025-08-15T20:14:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -2370,8 +2361,8 @@
       "has_children": false,
       "archived": false,
       "in_trash": false,
-      "type": "heading_3",
-      "heading_3": {
+      "type": "paragraph",
+      "paragraph": {
         "rich_text": [
           {
             "type": "text",
@@ -2380,7 +2371,7 @@
               "link": null
             },
             "annotations": {
-              "bold": false,
+              "bold": true,
               "italic": false,
               "strikethrough": false,
               "underline": false,
@@ -2391,7 +2382,6 @@
             "href": null
           }
         ],
-        "is_toggleable": false,
         "color": "default"
       },
       "blocks": []
@@ -3763,7 +3753,7 @@
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
       "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "last_edited_time": "2025-08-17T06:20:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -3781,7 +3771,7 @@
           {
             "type": "text",
             "text": {
-              "content": "\"New integration\" 생성",
+              "content": "New integration 생성",
               "link": null
             },
             "annotations": {
@@ -3792,7 +3782,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "\"New integration\" 생성",
+            "plain_text": "New integration 생성",
             "href": null
           }
         ],
@@ -3808,7 +3798,7 @@
         "page_id": "1d19c395-c2fb-80ba-8b20-c136de8e0f26"
       },
       "created_time": "2025-08-13T22:53:00.000Z",
-      "last_edited_time": "2025-08-13T22:53:00.000Z",
+      "last_edited_time": "2025-08-17T06:21:00.000Z",
       "created_by": {
         "object": "user",
         "id": "52c52d67-2221-4853-bae4-9687a30c395a"
@@ -3826,7 +3816,7 @@
           {
             "type": "text",
             "text": {
-              "content": "\"Internal Integration Secret\" 복사 (여기가 핵심!)",
+              "content": "Internal Integration Secret 복사",
               "link": null
             },
             "annotations": {
@@ -3837,7 +3827,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "\"Internal Integration Secret\" 복사 (여기가 핵심!)",
+            "plain_text": "Internal Integration Secret 복사",
             "href": null
           }
         ],
