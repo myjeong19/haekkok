@@ -1,8 +1,6 @@
 import { baseUrl } from 'app/sitemap';
 import posts from 'content/posts';
 
-export const runtime = 'edge';
-
 export async function GET() {
   const itemsXml = posts
     .sort((a, b) => {
