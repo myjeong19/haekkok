@@ -1,6 +1,6 @@
 import post1 from '../notion-data/5번의-복붙-지옥에서-1번의-명령어로-notionpresso-cli.json';
 
-const posts = [
+export const posts = [
   {
     title: '5번의 복붙 지옥에서 1번의 명령어로: NotionPresso CLI',
     slug: 'notionpresso-cli-improvement',

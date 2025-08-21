@@ -2,10 +2,8 @@
 
 import Link from 'next/link';
 import posts from '../content/posts';
-import Image from 'next/image';
 import { PostCard } from './post-card';
 import { PostListItem } from './post-list-item';
-import { Squirrel } from 'lucide-react';
 
 export function BlogPosts() {
   return (

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import ThemeToggle from './theme';
 import { usePathname } from 'next/navigation';
 
+import { posts } from '@/content/posts';
 import { ScrollProgressBar } from '@/components/scroll-progress-bar';
 import { classMerge } from '@/lib/class-merge';
 import { useScrolled } from '@/hooks/comment/use-scrolled';
@@ -18,11 +19,12 @@ export const navItems = {
 
 export function Navbar() {
   const pathname = usePathname();
+  const post = posts.find(post => `/posts/${post.slug}` === pathname);
   const { showHeader, showFixedNav, getCurrentPageTitle } = useScrolled();
 
   return (
     <>
-      {showHeader && (
+      {pathname === `/posts/${post?.slug}` && showHeader && (
         <header className="w-full md:max-w-2xl max-w-4xl fixed left-1/2 transform -translate-x-1/2 top-0 right-0 z-50 h-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
           <div className="mx-auto h-full px-2 py-3 flex justify-between items-center">
             <div className="flex flex-row space-x-0">
@@ -35,7 +37,7 @@ export function Navbar() {
         </header>
       )}
 
-      {showFixedNav && (
+      {pathname === `/posts/${post?.slug}` && showFixedNav && (
         <nav className="w-full md:max-w-2xl max-w-4xl fixed left-1/2 transform -translate-x-1/2 top-0 right-0 z-50 h-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
           <div className="mx-auto h-full px-2 py-3 flex justify-between items-center">
             <div className="flex flex-row space-x-0">
