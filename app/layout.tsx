@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Navbar } from 'components/nav';
-import { baseUrl } from './sitemap';
 import { ThemeProvider } from 'next-themes';
 import { seoConfig, generateJsonLd } from 'lib/seo';
+import { SITE } from './constants';
 
-const jsonLd = generateJsonLd(baseUrl);
+const jsonLd = generateJsonLd(SITE.URL);
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
+  metadataBase: new URL(SITE.URL),
   title: {
     default: `${seoConfig.site.name} | 프론트엔드 개발자`,
     template: `%s | ${seoConfig.site.name} | 프론트엔드 개발자`,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${seoConfig.site.name} | 프론트엔드 개발자`,
     description: seoConfig.site.description,
-    url: baseUrl,
+    url: SITE.URL,
     siteName: seoConfig.site.name,
     locale: 'ko_KR',
     type: 'website',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     apple: seoConfig.images.favicon.svg,
   },
   alternates: {
-    canonical: baseUrl,
+    canonical: SITE.URL,
   },
 };
 

@@ -1,5 +1,5 @@
 import { navItems } from '@/components/nav';
-import posts from '@/content/posts';
+import feeds from '@/content/feeds';
 import { usePathname } from 'next/navigation';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -10,10 +10,10 @@ export const useScrolled = () => {
   const lastScrollYRef = useRef(0);
   const pathname = usePathname();
 
-  const post = posts.find(post => `/posts/${post.slug}` === pathname);
+  const feed = feeds.find(feed => `/feeds/${feed.slug}` === pathname);
 
   const getCurrentPageTitle = () => {
-    if (post) return post.title;
+    if (feed) return feed.title;
     const staticPage = navItems[pathname as keyof typeof navItems];
     if (staticPage) return staticPage.name;
     return 'Page Not Found';

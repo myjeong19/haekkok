@@ -2,6 +2,8 @@
 
 import { useEffect, useState, useRef } from 'react';
 
+const PERCENT = 100;
+
 export function ScrollProgressBar() {
   const [progress, setProgress] = useState(0);
   const ticking = useRef(false);
@@ -12,7 +14,7 @@ export function ScrollProgressBar() {
         requestAnimationFrame(() => {
           const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
           const scrolled = window.scrollY;
-          const progress = (scrolled / scrollHeight) * 100;
+          const progress = (scrolled / scrollHeight) * PERCENT;
           setProgress(progress);
           ticking.current = false;
         });

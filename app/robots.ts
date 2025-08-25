@@ -1,6 +1,8 @@
-import { baseUrl } from 'app/sitemap';
+import { SITE } from './constants';
 
-export default function robots() {
+import type { MetadataRoute } from 'next';
+
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
@@ -8,17 +10,7 @@ export default function robots() {
         allow: '/',
         disallow: ['/api/', '/admin/', '/private/'],
       },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/api/'],
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/api/'],
-      },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE.URL}/sitemap.xml`,
   };
 }
