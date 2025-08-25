@@ -1,21 +1,20 @@
-import { baseUrl } from 'app/sitemap';
-import posts from 'content/posts';
+import { SITE } from 'app/constants';
+import feeds from '@/content/feeds';
 
 export async function GET() {
-  const itemsXml = posts
+  const itemsXml = feeds
     .sort((a, b) => {
-      if (new Date(a.date) > new Date(b.date)) {
-        return -1;
-      }
-      return 1;
+      const diff = new Date(b.date).getTime() - new Date(a.date).getTime();
+      if (diff !== 0) return diff;
+      return a.slug.localeCompare(b.slug);
     })
     .map(
-      post =>
+      feed =>
         `<item>
-          <title>${post.title}</title>
-          <link>${baseUrl}/posts/${post.slug}</link>
-          <description>${post.description}</description>
-          <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+          <title>${feed.title}</title>
+          <link>${SITE.URL}/feeds/${feed.slug}</link>
+          <description>${feed.description}</description>
+          <pubDate>${new Date(feed.date).toUTCString()}</pubDate>
         </item>`
     )
     .join('\n');
@@ -24,15 +23,13 @@ export async function GET() {
   <rss version="2.0">
     <channel>
         <title>My Portfolio</title>
-        <link>${baseUrl}</link>
+        <link>${SITE.URL}</link>
         <description>This is my portfolio RSS feed</description>
         ${itemsXml}
     </channel>
   </rss>`;
 
   return new Response(rssFeed, {
-    headers: {
-      'Content-Type': 'text/xml',
-    },
+    headers: { 'Content-Type': 'application/rss+xml; charset=utf-8' },
   });
 }
