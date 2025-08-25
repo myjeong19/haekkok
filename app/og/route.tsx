@@ -1,8 +1,11 @@
 import { ImageResponse } from 'next/og';
 
+const WIDTH = 1200;
+const HEIGHT = 630;
+
 export function GET(request: Request) {
   let url = new URL(request.url);
-  let title = url.searchParams.get('title') || 'Next.js Portfolio Starter';
+  let title = url.searchParams.get('title') || 'HAEKKOK | 프론트엔드 개발자';
 
   return new ImageResponse(
     (
@@ -13,8 +16,8 @@ export function GET(request: Request) {
       </div>
     ),
     {
-      width: 1200,
-      height: 630,
+      width: WIDTH,
+      height: HEIGHT,
     }
   );
 }

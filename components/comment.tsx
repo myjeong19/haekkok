@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef } from 'react';
-import { useTheme } from 'next-themes';
 import { useComments } from '@/hooks/comment/use-comments';
 import { CommentLoading, CommentError } from './comment-status-info';
 

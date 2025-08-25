@@ -1,12 +1,12 @@
 'use client';
 
-import { BlogPosts } from 'components/posts';
+import { Feeds } from '@/components/feeds';
 
 export default function Page() {
   return (
-    <section className="">
+    <section>
       <div className="my-8">
-        <BlogPosts />
+        <Feeds />
       </div>
     </section>
   );

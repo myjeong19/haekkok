@@ -1,13 +1,13 @@
 'use client';
 import { Notion } from '@notionpresso/react';
-import type { Post } from '@/content/posts';
+import type { Feed } from '@/content/feeds';
 import { setDateFormat } from '@/lib';
 import { Hashtag } from './hashtag';
 
-export default function NotionRenderer({ post }: { post: Post }) {
+export default function NotionRenderer({ feed }: { feed: Feed }) {
   return (
     <Notion>
-      <Notion.Cover src={post.image} />
+      <Notion.Cover src={feed.image} />
       <Notion.Body>
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-br from-neutral-50/4 via-transparent to-neutral-100/4 dark:from-blue-950/20 dark:via-purple-950/15 dark:to-pink-950/20  z-0"></div>
@@ -20,7 +20,7 @@ export default function NotionRenderer({ post }: { post: Post }) {
           <header className="relative mb-12 px-6 py-8 bg-gradient-to-br from-white/15 via-white/8 to-neutral-50/3 dark:from-neutral-950/40 dark:via-neutral-900/30 dark:to-neutral-800/25 backdrop-blur-xl shadow-inner shadow-white/20 dark:shadow-neutral-800/20 overflow-hidden z-10">
             <div className="pb-6">
               <h1 className="text-2xl md:text-4xl font-bold text-blue-500 dark:text-blue-300 leading-tight tracking-tight">
-                {post.title}
+                {feed.title}
               </h1>
             </div>
 
@@ -28,14 +28,14 @@ export default function NotionRenderer({ post }: { post: Post }) {
               <div className="space-y-6">
                 <div className="space-y-3">
                   <p className="text-md leading-relaxed text-neutral-800 dark:text-neutral-200 font-medium">
-                    {post.description}
+                    {feed.description}
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  <Hashtag hashtag={post.hashtag} slug={post.slug} className="text-sm" />
+                  <Hashtag hashtag={feed.hashtag} slug={feed.slug} className="text-sm" />
                   <time className="block mt-2 text-sm text-neutral-400 dark:text-neutral-500 font-normal">
-                    {setDateFormat(post.date)}
+                    {setDateFormat(feed.date)}
                   </time>
                 </div>
               </div>
@@ -51,7 +51,7 @@ export default function NotionRenderer({ post }: { post: Post }) {
           </header>
         </div>
 
-        <Notion.Blocks blocks={post.content.blocks} />
+        <Notion.Blocks blocks={feed.content.blocks} />
       </Notion.Body>
     </Notion>
   );

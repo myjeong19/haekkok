@@ -1,7 +1,7 @@
-import type { Post } from '@/content/posts';
+import type { Feed } from '@/content/feeds';
 import { classMerge } from '@/lib/class-merge';
 
-type HashtagProps = Pick<Post, 'hashtag' | 'slug'> & { className?: string };
+type HashtagProps = Pick<Feed, 'hashtag' | 'slug'> & { className?: string };
 
 export function Hashtag({ hashtag, slug, className = '' }: HashtagProps) {
   return (

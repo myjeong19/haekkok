@@ -3,14 +3,14 @@ import Link from 'next/link';
 import ThemeToggle from './theme';
 import { usePathname } from 'next/navigation';
 
-import { posts } from '@/content/posts';
+import feeds from '@/content/feeds';
 import { ScrollProgressBar } from '@/components/scroll-progress-bar';
 import { classMerge } from '@/lib/class-merge';
 import { useScrolled } from '@/hooks/comment/use-scrolled';
 
 export const navItems = {
   '/': {
-    name: 'Feed',
+    name: 'Feeds',
   },
   '/about': {
     name: 'About',
@@ -19,12 +19,12 @@ export const navItems = {
 
 export function Navbar() {
   const pathname = usePathname();
-  const post = posts.find(post => `/posts/${post.slug}` === pathname);
+  const feed = feeds.find(feed => `/feeds/${feed.slug}` === pathname);
   const { showHeader, showFixedNav, getCurrentPageTitle } = useScrolled();
 
   return (
     <>
-      {pathname === `/posts/${post?.slug}` && showHeader && (
+      {pathname === `/feeds/${feed?.slug}` && showHeader && (
         <header className="w-full md:max-w-2xl max-w-4xl fixed left-1/2 transform -translate-x-1/2 top-0 right-0 z-50 h-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
           <div className="mx-auto h-full px-2 py-3 flex justify-between items-center">
             <div className="flex flex-row space-x-0">
@@ -37,7 +37,7 @@ export function Navbar() {
         </header>
       )}
 
-      {pathname === `/posts/${post?.slug}` && showFixedNav && (
+      {pathname === `/feeds/${feed?.slug}` && showFixedNav && (
         <nav className="w-full md:max-w-2xl max-w-4xl fixed left-1/2 transform -translate-x-1/2 top-0 right-0 z-50 h-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
           <div className="mx-auto h-full px-2 py-3 flex justify-between items-center">
             <div className="flex flex-row space-x-0">
@@ -47,7 +47,7 @@ export function Navbar() {
                   href={path}
                   className={classMerge(
                     'transition-all text-neutral-600 hover:text-neutral-900 active:text-black dark:text-neutral-300 dark:hover:text-neutral-100 dark:active:text-white flex align-middle relative py-1 pl-2 m-1 font-medium hover:font-bold',
-                    (pathname === path || (pathname.includes('posts') && path === '/')) &&
+                    (pathname === path || (pathname.includes('feeds') && path === '/')) &&
                       'font-bold text-black dark:text-neutral-100 dark:hover:text-neutral-100'
                   )}
                 >
@@ -75,7 +75,7 @@ export function Navbar() {
                   href={path}
                   className={classMerge(
                     'transition-all text-neutral-600 hover:text-neutral-900 active:text-black dark:text-neutral-300 dark:hover:text-neutral-100 dark:active:text-white flex align-middle relative py-1 px-2 m-1 font-medium hover:font-bold',
-                    (pathname === path || (pathname.includes('posts') && path === '/')) &&
+                    (pathname === path || (pathname.includes('feeds') && path === '/')) &&
                       'font-bold text-black dark:text-neutral-100 dark:hover:text-neutral-100'
                   )}
                 >
