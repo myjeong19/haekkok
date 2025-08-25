@@ -4,15 +4,11 @@ import { SITE } from 'app/constants';
 import NotionRenderer from 'components/notion-renderer';
 import Comment from 'components/comment';
 
-interface Params {
-  slug: string;
-}
-
 export async function generateStaticParams() {
   return feeds.map(feed => ({ slug: feed.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata({ params }) {
   const { slug } = params;
   const feed = feeds.find(feed => feed.slug === slug);
   if (!feed) {
@@ -66,7 +62,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
-export default async function Feed({ params }: { params: Params }) {
+export default async function Feed({ params }) {
   const { slug } = await params;
   let feed = feeds.find(feed => feed.slug === slug);
   if (!feed) {
