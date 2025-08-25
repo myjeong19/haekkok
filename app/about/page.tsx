@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
-import { baseUrl } from '../sitemap';
+import { SITE } from '../constants';
 import { seoConfig } from 'lib/seo';
 
 export const metadata: Metadata = {
@@ -8,19 +8,19 @@ export const metadata: Metadata = {
   description:
     'About | 프론트엔드 개발자 HAEKKOK – 불편을 문제로 남기지 않고, 해결 과정에서 얻은 배움을 프로젝트와 글로 이어갑니다.',
   alternates: {
-    canonical: `${baseUrl}/about`,
+    canonical: `${SITE.URL}/about`,
   },
   openGraph: {
     title: 'About | HAEKKOK - 프론트엔드 개발자',
     description:
       'About | 프론트엔드 개발자 HAEKKOK – 불편을 문제로 남기지 않고, 해결 과정에서 얻은 배움을 프로젝트와 글로 이어갑니다.',
-    url: `${baseUrl}/about`,
+    url: `${SITE.URL}/about`,
     siteName: seoConfig.site.name,
     locale: 'ko_KR',
     type: 'profile',
     images: [
       {
-        url: `${baseUrl}/og?title=${encodeURIComponent(
+        url: `${SITE.URL}/og?title=${encodeURIComponent(
           'About | 프론트엔드 개발자 HAEKKOK – 불편을 문제로 남기지 않고, 해결 과정에서 얻은 배움을 프로젝트와 글로 이어갑니다.'
         )}`,
         width: 1200,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About | HAEKKOK - 프론트엔드 개발자',
     description: '프론트엔드 개발자 HAEKKOK',
-    images: [`${baseUrl}/og?title=${encodeURIComponent('About | HAEKKOK - 프론트엔드 개발자')}`],
+    images: [`${SITE.URL}/og?title=${encodeURIComponent('About | HAEKKOK - 프론트엔드 개발자')}`],
     creator: seoConfig.social.twitter.creator,
     site: seoConfig.social.twitter.site,
   },
@@ -47,7 +47,7 @@ export default function AboutPage() {
     jobTitle: '프론트엔드 개발자',
     description:
       '안녕하세요. 프론트엔드 개발자 HAEKKOK입니다. 불편을 문제로 남기지 않고, 해결 과정에서 얻은 배움을 프로젝트와 글로 이어갑니다.',
-    url: `${baseUrl}/about`,
+    url: `${SITE.URL}/about`,
     sameAs: [
       'https://www.linkedin.com/in/minyeong-jeong-a93a01271/',
       'https://github.com/myjeong19',
